@@ -102,3 +102,9 @@
    room tint (4), so arranging and the time-of-day wash are untouched.
    ⚠ This is a defect in the room itself, not only on this page. */
 #room-scene-el #room-obj-chair { z-index: 2; }
+
+/* where the visitor is standing */
+.mcal-day.mcal-here {
+  background: var(--accent); border-color: var(--ink); color: var(--px-bevel-hi);
+  box-shadow: 0 0 0 2px var(--accent);
+}

@@ -60,8 +60,13 @@
 
   function openCalendar() {
     header('Katherine Mansfield’s days',
-      'She died a hundred years ago and her writing belongs to everyone now. ' +
-      'Everything here was made in advance, on one computer — nothing is thinking while you look.');
+      standing
+        ? ('You are standing in ' + DAYS[standing].title +
+           '. The room holds only what she had written by then. ' +
+           'Press another date to move.')
+        : ('Press a date and you are in it — the room holds only what she had ' +
+           'written by then. Everything here was made in advance, on one ' +
+           'computer; nothing is thinking while you look.'));
     var years = el('div', 'mcal-years');
     YEARS.forEach(function (y) {
       var b = el('button', 'mcal-year', y);
@@ -83,7 +88,8 @@
       if (!d.rid) { b.classList.add('mcal-quiet'); }
       if (d.marked) { b.classList.add('mcal-marked'); }
       if (d.fence && !allowed) { b.classList.add('mcal-held'); }
-      b.addEventListener('click', function () { openDay(k); });
+      if (k === standing) { b.classList.add('mcal-here'); }
+      b.addEventListener('click', function () { travel(k); });
       grid.appendChild(b);
     });
     sheet.appendChild(grid);
@@ -115,7 +121,9 @@
         'not the words, not the date, not that it exists.'));
       var b = el('button', 'mcal-btn', 'let the librarian read this');
       b.type = 'button';
-      b.addEventListener('click', function () { allowed = true; openDay(FENCE); });
+      b.addEventListener('click', function () {
+        allowed = true; window.__FENCE_ALLOWED__ = true; travel(FENCE);
+      });
       a.appendChild(b);
     } else {
       a.appendChild(el('p', null,
@@ -130,6 +138,22 @@
     });
     a.appendChild(m);
     return a;
+  }
+
+  /* ⭐⭐ Her ruling: pressing a date does not open a reader — it puts you IN
+     that date. The room keeps only what she had written by then, and the
+     candle hands back the most recent reflection from there. */
+  var standing = null;
+  function travel(key) {
+    var d = DAYS[key];
+    standing = key;
+    window.__ROOM_TRAVEL__(d.datekey || key);
+    close();
+    // ⛔ NO RELOAD. A reload would empty the shelf the visitor is filling, and
+    // it is not needed: every surface that shows her things re-reads the
+    // library when it opens, so the next thing they look at is already the
+    // room as it stood that day.
+    if (window.__GUIDE__) { window.__GUIDE__.arrived(d.title); }
   }
 
   function openDay(key) {

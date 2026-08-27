@@ -1,0 +1,22 @@
+/* the guide — demo page only */
+#mguide {
+  background: var(--card); border: 2px solid var(--ink); bottom: 16px;
+  box-shadow: var(--shadow-soft); color: var(--ink-soft); font-family: var(--font-pixel);
+  left: 50%; max-width: min(30rem, calc(100vw - 32px)); padding: 12px 14px;
+  position: fixed; transform: translateX(-50%); z-index: 30;
+}
+#mguide .mguide-step { font-size: .92rem; line-height: 1.5; margin: 0 0 8px; }
+#mguide .mguide-row { margin: 0; text-align: right; }
+#mguide .mguide-skip {
+  background: none; border: 0; color: var(--stone); cursor: pointer;
+  font: inherit; font-size: .78rem; padding: 2px 4px; text-decoration: underline;
+}
+#mguide .mguide-skip:hover { color: var(--accent); }
+#mguide-halo {
+  border: 2px solid var(--accent); display: none; pointer-events: none;
+  position: fixed; z-index: 29;
+}
+@media (prefers-reduced-motion: no-preference) {
+  #mguide-halo { animation: mguide-pulse 1.8s ease-in-out infinite; }
+  @keyframes mguide-pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+}

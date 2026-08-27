@@ -48,6 +48,41 @@
   }
   var realFetch = window.fetch.bind(window);
 
+  /* The store as it stood on the day the visitor is standing in. Her things
+     appear when she wrote them; a reflection is in the room only once this
+     visitor has kept it. */
+  /* ⛔ NO DEEP COPY. The store is ~420 KB and the room reads /api/items many
+     times a sitting; cloning it each time stalled the re-pull long enough for
+     the room to start apologising ("this one is taking a while"). The items
+     are shared BY REFERENCE on purpose — a state change must land on the one
+     store — and the answer is memoised until something that changes it moves. */
+  var _cache = null, _key = '';
+  function storeNow() {
+    var key = (TODAY || '-') + '|' + KEPT.length + '|' + (FENCE_HELD() ? 'h' : 'o');
+    if (_cache && _key === key) { return _cache; }
+    var keptIds = {};
+    KEPT.forEach(function (b) { keptIds[b.id] = 1; });
+    var fence = fenceItemId();
+    function keep(v) {
+      if (v.source === 'librarian') { return !!keptIds[v.id]; }
+      if (fence && v.id === fence && FENCE_HELD()) { return false; }
+      return withinToday(v);
+    }
+    var out = {};
+    Object.keys(STORE).forEach(function (k) { out[k] = STORE[k]; });
+    if (Array.isArray(STORE.items)) { out.items = STORE.items.filter(keep); }
+    else {
+      var m = {};
+      Object.keys(STORE.items).forEach(function (k) {
+        if (keep(STORE.items[k])) { m[k] = STORE.items[k]; }
+      });
+      out.items = m;
+    }
+    _cache = out; _key = key;
+    return out;
+  }
+  function forgetStoreCache() { _cache = null; _key = ''; }
+
   function applyState(body) {
     var by = itemsById(), changes = (body && body.changes) || [];
     changes.forEach(function (c) {
@@ -68,16 +103,63 @@
      writing comes back. The words are the room's own, verbatim. */
   /* the rotation starts somewhere different every visit, so two people
      arriving from the same link do not meet the same sitting */
-  var SIT = {job: 0, at: 0, pick: null, n: Math.floor(Math.random() * 1000)};
+  var SIT = {job: 0, at: 0, pick: null};
+
+  /* ⭐⭐ HER RULING 2026-08-27: pressing a date on the calendar does not open
+     a reader — it puts you IN that date. The room holds only what she had
+     written by then, and the candle hands back the most recent reflection
+     from where you are standing. Move forward and the room fills; that drip
+     is the first line of the claim, made literal. */
+  var TODAY = null;                    // ISO day the visitor is standing in
+  window.__ROOM_TRAVEL__ = function (iso) {
+    TODAY = iso || null;
+    SEEN = {};                         // a new moment: the room offers again
+    forgetStoreCache();
+  };
+  window.__ROOM_TODAY__ = function () { return TODAY; };
+  var SEEN = {};
+
+  function dateOf(id) { return (window.__DATES__ || {})[id] || null; }
+  function withinToday(v) {
+    if (!TODAY) { return true; }
+    var d = dateOf(v.id);
+    if (!d) { return true; }           // undated things are always in the room
+    return d <= TODAY;
+  }
   /* ⭐ Her ruling 2026-08-27: the shelf starts EMPTY and fills with what a
      visitor decides to keep. The bookshelf IS the reflections library, so
      this list is the shelf — one spine per sitting kept, gone on reload. */
   var KEPT = [];
   var THINK_MS = 4200;                     // long enough to read as looking
 
-  function sittings() {
-    var c = window.__CALENDAR__;
-    return (c && c.sittings) || [];
+  function cal() { return window.__CALENDAR__ || {days: {}, sittings: []}; }
+  function sittings() { return cal().sittings || []; }
+  function fenceItemId() {
+    var d = cal().days['1915-10-29'];
+    return d ? d.id : null;
+  }
+  function FENCE_HELD() { return window.__FENCE_ALLOWED__ !== true; }
+
+  /* The most recent reflection from where the visitor is standing — and on a
+     second tap, the one before that. Things come back a few at a time; that
+     is the room's actual behaviour, not a demo flourish. */
+  function pickForToday() {
+    var days = cal().days, list = sittings();
+    var eligible = list.filter(function (s) {
+      var d = days[s.day];
+      if (!d) { return false; }
+      if (d.fence && FENCE_HELD()) { return false; }
+      if (!TODAY) { return true; }
+      return (d.datekey || s.day) <= TODAY;
+    });
+    if (!eligible.length) { return null; }
+    eligible.sort(function (a, b) { return (a.day < b.day) ? 1 : -1; });  // newest first
+    for (var i = 0; i < eligible.length; i++) {
+      if (!SEEN[eligible[i].rid]) { SEEN[eligible[i].rid] = 1; return eligible[i]; }
+    }
+    SEEN = {};                                   // walked all the way back
+    SEEN[eligible[0].rid] = 1;
+    return eligible[0];
   }
   function stageWord(ms) {
     if (ms < 1200) { return 'looking through what is new'; }
@@ -106,9 +188,9 @@
 
     if (path === '/api/librarian/session' && method === 'POST') {
       if (body && body.intent === 'discard') { SIT.pick = null; return json({ok: true}); }
-      if (!list.length) { return json({ok: true, nothing_new: true}); }
-      SIT.pick = list[SIT.n % list.length];
-      SIT.n += 1;
+      var chosen = pickForToday();
+      if (!chosen) { return json({ok: true, nothing_new: true}); }
+      SIT.pick = chosen;
       SIT.at = Date.now();
       return json({ok: true, available: true, nothing_new: false,
                    reach_set_aside: 0, own_kept: 1, saved_kept: 0});
@@ -126,6 +208,7 @@
                      allowed_ts: Date.now()});
         }
         saved = true;
+        forgetStoreCache();
       }
       SIT.pick = null;
       return json({ok: true, outcome: outcome, saved: saved, writeback: false,
@@ -183,7 +266,7 @@
     if (path.indexOf('/api/librarian/') === 0) { return librarian(path, method, body); }
 
     if (method === 'GET') {
-      if (path === '/api/items') { return json(STORE); }
+      if (path === '/api/items') { return json(storeNow()); }
       if (Object.prototype.hasOwnProperty.call(SNAP, path)) { return json(SNAP[path]); }
       return json({ok: true});
     }
