@@ -1,7 +1,0 @@
-"When I get by myself, I am always more or less actively miserable. If it were not for J. I should live quite alone. It's raining; I have a cold and my fire has gone out." Three flat facts after the confession, and then the sentence turns on a sound: "Sparrows outside are cheeping like chickens. Oh heavens! what a different scene the sound recalls!" The warm sun, the tiny yellow balls, so dainty, treading down the grass blades — and Sheehan handing over the smallest chick wrapped in a flannel to carry to the kitchen fire. The fire in the room has gone out; the fire the memory walks toward is the kitchen one.
-
-The next day is her mother's birthday. "I wrote at 2 o'clock and got up and sat on the box of the window thinking of her." What she wants is small and exact: "the little frown between her brows," the voice. And then, without softening: "But I don't think I will. My memory of her is so complete that I don't think it will be disturbed."
-
-The same page has room for the dull dinner, for P. who "only likes me because of what I used to be like," for the river low and the little walls and towers and chimneys black against the night. And for "Thank God! there's a sprinkle of sun to-day."
-
-I keep returning to the last line — "I am getting all my spring out of the sunsets" — sitting right beside "I keep thinking of Paris and money." It is an accounting, not a consolation. I wonder whether it was that sentence that made you keep the pair together, one day and then the next, rather than either one alone.
