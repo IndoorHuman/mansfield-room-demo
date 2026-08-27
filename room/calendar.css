@@ -1,0 +1,95 @@
+/* The wall calendar — this demo page only. Namespaced mcal- so nothing here
+   can collide with the room's own chrome. Tokens only; no new colours. */
+#room-obj-calendar .room-label { pointer-events: none; }
+
+#mcal-scrim {
+  background: var(--scrim);
+  display: none;
+  inset: 0;
+  overflow-y: auto;
+  padding: 24px 12px 64px;
+  position: fixed;
+  z-index: 40;
+}
+#mcal-scrim.mcal-open { display: block; }
+
+.mcal-sheet {
+  background: var(--card);
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-soft);
+  margin: 0 auto;
+  max-width: 44rem;
+  padding: 18px 16px 28px;
+}
+.mcal-top {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+.mcal-top h2 { color: var(--ink); font-size: 1.2rem; margin: 0; }
+.mcal-sub { color: var(--ink-soft); font-size: .86rem; margin: 6px 0 0; }
+
+.mcal-years { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 12px; }
+.mcal-year {
+  background: var(--btn-bg); border: 2px solid var(--btn); color: var(--btn);
+  cursor: pointer; font: inherit; padding: 5px 10px;
+}
+.mcal-year[aria-pressed="true"] { background: var(--accent); color: var(--px-bevel-hi); }
+.mcal-year:focus-visible, .mcal-day:focus-visible, .mcal-btn:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+
+.mcal-grid { display: flex; flex-wrap: wrap; gap: 4px; }
+.mcal-day {
+  align-items: center; background: var(--btn-bg); border: 2px solid var(--btn);
+  color: var(--btn); cursor: pointer; display: inline-flex; font: inherit;
+  font-size: .82rem; height: 2rem; justify-content: center; min-width: 2rem;
+  padding: 0 5px; position: relative;
+}
+.mcal-day:hover { background: var(--accent); color: var(--px-bevel-hi); }
+.mcal-day.mcal-wide { min-width: 3.4rem; }
+.mcal-day.mcal-quiet { background: transparent; border-color: var(--paper-shadow); color: var(--stone); }
+.mcal-day.mcal-quiet:hover { background: var(--stone); color: var(--card); }
+.mcal-day.mcal-marked::after {
+  background: var(--accent); content: ""; height: 4px; position: absolute;
+  right: 2px; top: 2px; width: 4px;
+}
+.mcal-day.mcal-held {
+  background: repeating-linear-gradient(45deg, var(--paper-shadow) 0 4px, transparent 4px 8px);
+  color: var(--stone);
+}
+.mcal-count { color: var(--stone); font-size: .74rem; margin: 10px 0 0; }
+
+.mcal-legend {
+  color: var(--stone); display: flex; flex-wrap: wrap; font-size: .72rem;
+  gap: 6px 14px; margin-top: 14px;
+}
+.mcal-legend span { align-items: center; display: inline-flex; gap: 5px; }
+.mcal-legend i { border: 2px solid var(--ink); display: inline-block; height: .8rem; width: .8rem; }
+.mcal-k-day { background: var(--btn-bg); }
+.mcal-k-quiet { background: transparent; border-color: var(--paper-shadow); }
+.mcal-k-held { background: repeating-linear-gradient(45deg, var(--paper-shadow) 0 3px, transparent 3px 6px); }
+
+.mcal-aside {
+  border: 2px solid var(--ink); background: var(--paper); margin-top: 18px; padding: 12px;
+}
+.mcal-aside h3 { color: var(--ink); font-size: .96rem; margin: 0 0 6px; }
+.mcal-aside p { font-family: var(--font-serif); font-size: .9rem; margin: 0 0 8px; }
+.mcal-btn {
+  background: var(--btn-bg); border: 2px solid var(--btn); box-shadow: var(--shadow-soft);
+  color: var(--btn); cursor: pointer; font: inherit; padding: 6px 12px;
+}
+.mcal-btn:hover { background: var(--accent); color: var(--px-bevel-hi); }
+.mcal-moment { border-left: 3px solid var(--accent); font-size: .8rem; margin-top: 10px; padding-left: 10px; }
+.mcal-moment span { display: block; margin-bottom: 4px; }
+
+/* a day, open — the room's reading register: her words in the serif */
+.mcal-read { display: flex; flex-direction: column; gap: 18px; }
+.mcal-part-k {
+  color: var(--stone); font-size: .72rem; letter-spacing: .13em; text-transform: uppercase;
+}
+.mcal-body { color: var(--ink-soft); font-family: var(--font-serif); font-size: 1rem; }
+.mcal-body p { margin: 0 0 .85rem; }
+.mcal-rname { color: var(--ink); font-family: var(--font-serif); font-style: italic; margin: 0 0 .5rem; }
+.mcal-nothing { color: var(--stone); font-family: var(--font-serif); font-style: italic; }

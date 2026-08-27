@@ -1,0 +1,5 @@
+"Worked from 9.30 till a quarter after midnight only stopping to eat. Finished the story." The hours get counted, and the finishing gets three words and a full stop.
+
+Then the night: "Lay awake then until 5.30 too excited to sleep. In the sea drowned souls sang all night." Those two sentences share a page and share the same hours, and nothing between them explains how one gave way to the other. And afterwards, "I thought of everything in my life, and it all came back so vividly...." — the ellipsis doing whatever it does there.
+
+The entry ends "These are the worst days of my whole life." It is set down beside the finished story with no seam, no adjustment made to either. I keep wondering whether "too excited" was still the right word by five in the morning, or whether it had turned into something else under you while the singing went on and there was no name handy for it yet.

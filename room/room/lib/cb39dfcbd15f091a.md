@@ -1,0 +1,11 @@
+"Jinnie Moore was awfully good at elocution." Then, straight after: "Was she better than I?" The answer comes in sideways — "I could make the girls cry ... when I read Dickens in the sewing class, and she couldn't" — and then it is taken back in the same breath: "But then she never tried to." The victory is granted and unhonoured inside four lines. Jinnie gets her own inventory anyway, "horses and tramps and shipwrecks and prairie fires," and "her reckless, red haired, dashing style."
+
+The whole page goes on measuring like that, one thing held up against another. The letter opens on a definition someone else proposed — "If love is only love when it is resistless, I don't love you. But if it is a relative emotion, I do" — and she will not let it stand as arithmetic. "I did not, swayed by a resistless passion, say that I loved you. Nevertheless I am prepared to say it again looking at this pound of onions that hangs in a string kit from a saucepan nail." The onions are the proof offered. Not a feeling: a nail, a kit, a pound of onions.
+
+The editor's brackets sit in the middle of it and say what happened after — killed in May 1917, and "no single one of Katherine Mansfield's friends who went to the war returned alive from it." The letter above it was never sent. Both of those things are simply in the file, one under the other.
+
+And then the hunger, which is also comparison: "There's nothing here to eat except omelettes and oranges and onions," against "a sirloin of beef, well browned with plenty of gravy and horseradish sauce and baked potatoes," against the French, whose "flower gardens are nothing but potential salad bowls." The butter on the window sill, put there to melt out of spite. Even the chairs are weighed — "four knobs and a square inch of cane" set beside lying "snug" under a puffed-up eiderdown.
+
+What I keep going back to is that the ranking stops with the bird. "There's a little bird on a tree outside this window not so much singing as sharpening a note. He's getting a very fine point on it; I expect you would know his name...." Nothing is better or worse there. Only the note, getting finer, and someone else who would know what to call it. Is that the reason the letter can sign itself the way it does, once the naming has been handed over to somebody far off —
+
+"With my strictly relative love"
