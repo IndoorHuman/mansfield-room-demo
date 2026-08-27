@@ -3,6 +3,7 @@
 **→ [Walk through what this is](https://indoorhuman.github.io/mansfield-room-demo/)**
 · **[Go straight into the room](https://indoorhuman.github.io/mansfield-room-demo/room/)**
 · **[What the first day looks like](https://indoorhuman.github.io/mansfield-room-demo/start/)**
+· **[Watch the two-minute film](https://indoorhuman.github.io/mansfield-room-demo/film.mp4)**
 
 > ⚠️ **Every sentence on this page and in the room is a stand-in.** The words
 > are being written; the days, the writing and the reflections are already real.
@@ -76,6 +77,16 @@ and nothing here can be made to spend money.
 
 What you do lasts as long as your visit. Keep a reflection and it goes on the
 shelf; reload and the shelf is bare again. The next visitor gets a fresh room.
+
+## Two minutes, if you would rather watch
+
+**[The film](https://indoorhuman.github.io/mansfield-room-demo/film.mp4)** —
+an empty machine to a room with your own writing coming back to you. No voice;
+it is captioned. It shows the fence first, the hours honestly, and it says out
+loud where a sitting was written in advance rather than while you watched.
+
+Music is Erik Satie's first Gymnopédie, 1888, marked *lent et douloureux*, in a
+public domain recording. Nobody is owed a credit for it.
 
 ## What running it yourself actually involves
 

@@ -17,20 +17,17 @@
   --shadow:3px 3px 0 var(--px-shadow);
 }
 :root:not([data-theme="light"]){}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --paper:#211f1c; --paper-shadow:#3a352e; --ink:#efe9dd; --ink-soft:#cdc5b6;
-    --btn:#efe9dd; --btn-bg:#5d4d33; --card:#2b2823; --wood-deep:#7a6540;
-    --stone:#6b6559; --px-hi:#3a352e; --px-lo:#171512; --px-shadow:rgba(0,0,0,.5);
-    --green:#5f8a52;
-  }
-}
-:root[data-theme="dark"]{
-  --paper:#211f1c; --paper-shadow:#3a352e; --ink:#efe9dd; --ink-soft:#cdc5b6;
-  --btn:#efe9dd; --btn-bg:#5d4d33; --card:#2b2823; --wood-deep:#7a6540;
-  --stone:#6b6559; --px-hi:#3a352e; --px-lo:#171512; --px-shadow:rgba(0,0,0,.5);
-  --green:#5f8a52;
-}
+/* ⛔ This page does NOT follow the system's night mode, deliberately.
+   Nearly everything on it is a photograph of a room made of light paper. In
+   dark mode the page went near-black behind pictures that stayed bright, and
+   the result was a wall of glaring rectangles on black. The screenshots
+   cannot be dimmed to match — dimming a screenshot shows something the room
+   does not look like — so the page holds still instead.
+   `color-scheme: light` stops the browser's own furniture (scrollbars, form
+   controls, focus rings) flipping underneath it.
+   ⚠ The room itself at /room/ is untouched: it carries the app's own dark
+   palette, which was drawn on purpose. */
+:root { color-scheme: light; }
 *{box-sizing:border-box}
 body{background:var(--paper);color:var(--ink-soft);font-family:var(--font-pixel);
   font-variant-ligatures:none;line-height:1.55;margin:0;padding:0}

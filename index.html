@@ -24,20 +24,17 @@
   --shadow:3px 3px 0 var(--px-shadow);
 }
 :root:not([data-theme="light"]){}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --paper:#211f1c; --paper-shadow:#3a352e; --ink:#efe9dd; --ink-soft:#cdc5b6;
-    --btn:#efe9dd; --btn-bg:#5d4d33; --card:#2b2823; --wood-deep:#7a6540;
-    --stone:#6b6559; --px-hi:#3a352e; --px-lo:#171512; --px-shadow:rgba(0,0,0,.5);
-    --green:#5f8a52;
-  }
-}
-:root[data-theme="dark"]{
-  --paper:#211f1c; --paper-shadow:#3a352e; --ink:#efe9dd; --ink-soft:#cdc5b6;
-  --btn:#efe9dd; --btn-bg:#5d4d33; --card:#2b2823; --wood-deep:#7a6540;
-  --stone:#6b6559; --px-hi:#3a352e; --px-lo:#171512; --px-shadow:rgba(0,0,0,.5);
-  --green:#5f8a52;
-}
+/* ⛔ This page does NOT follow the system's night mode, deliberately. Nearly
+   everything on it is a picture of a room made of light paper; in dark mode
+   the page went near-black behind pictures that stayed bright, and the result
+   was a wall of glaring rectangles. A screenshot cannot be dimmed to match
+   without showing something the room does not look like, so the page holds
+   still. `color-scheme: light` stops the browser's own scrollbars and controls
+   flipping underneath it.
+   ⚠ The room at /room/ is untouched — it carries the app's own dark palette. */
+:root { color-scheme: light; }
+.film{width:100%;height:auto;display:block;border:2px solid var(--ink);
+  box-shadow:var(--shadow);background:#171614}
 *{box-sizing:border-box}
 body{background:var(--paper);color:var(--ink-soft);font-family:var(--font-pixel);
   font-variant-ligatures:none;line-height:1.55;margin:0;padding:0}
@@ -138,6 +135,23 @@ a{color:var(--accent)}
   <p class="small">Below: what you'll see if you run it &mdash; and then a hundred years of Katherine Mansfield's days, already read.</p>
   
 </header>
+
+<hr class="rule">
+
+<section>
+  <p class="eyebrow">two minutes</p>
+  <p class="small">The whole thing, from an empty machine to a room with your
+  own writing coming back to you. No voice &mdash; it is captioned.</p>
+  <video class="film" controls preload="none" poster="film-poster.png"
+    playsinline width="1280" height="720">
+    <source src="film.mp4" type="video/mp4">
+    <p class="small">Your browser will not play this. <a href="film.mp4">The
+    film is here</a> instead.</p>
+  </video>
+  <p class="small" style="color:var(--stone)">Music: Erik Satie's first
+  Gymnopédie, 1888 &mdash; marked <i>lent et douloureux</i>. A public domain
+  recording; nobody is owed a credit for it.</p>
+</section>
 
 <hr class="rule">
 
