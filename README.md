@@ -34,7 +34,7 @@ four hundred by the end of 1922. You watch a life accumulate.
 - **Writing first. Pictures are much slower** and much less certain.
 - This is **the first room of a larger house**, and it is still being built.
 
-## Three things wrong with it, said out loud
+## Three things wrong with it
 
 1. **Bringing writing in is one lump.** There is no resume. Close the lid, lose
    the power, or restart part-way and the whole import is discarded.
