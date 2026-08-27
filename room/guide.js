@@ -11,8 +11,9 @@
      say: 'Now press the candle. The librarian looks through what is new to ' +
           'her by that date, and writes one thing back.'},
     {key: 'keep',   at: null,
-     say: 'Keep it, and it goes on the shelf as a book. Let it go and nothing ' +
-          'is kept. Either way, the next visitor starts with an empty shelf.'}
+     say: 'Say yes when it asks, and then keep what it writes — it goes on the ' +
+          'shelf as a book. Let it go and nothing is kept. Either way, the next ' +
+          'visitor starts with an empty shelf.'}
   ];
   var at = 0, dead = false, box, halo;
 
@@ -37,7 +38,8 @@
     if (!s || !s.at) { if (halo) { halo.style.display = 'none'; } return; }
     // the calendar covers the room; a ring pointing at what is underneath it
     // is just a stray box on the screen
-    if (document.querySelector('#mcal-scrim.mcal-open')) {
+    if (document.querySelector('#mcal-scrim.mcal-open') ||
+        document.body.classList.contains('station-open')) {
       halo.style.display = 'none'; return;
     }
     var t = document.getElementById(s.at);
@@ -68,14 +70,17 @@
   // the candle step is done when the writing is on the paper; the keep step
   // when a spine is on the shelf — both read off the room's own DOM rather
   // than off anything this file controls
+  /* ⛔ THE GUIDE FOLLOWS THE ROOM, NOT THE POINTER. Advancing on the click
+     itself would move the guide on even when the room ignored it (a press
+     before the room has bound its objects is silently lost). Each step ends
+     on something the ROOM does: the sitting's own paper appearing, and a
+     spine appearing on the shelf. */
   function watch() {
-    var seenDraft = false;
     new MutationObserver(function () {
       if (dead) { return; }
-      var keepBtn = Array.prototype.slice.call(document.querySelectorAll('button'))
-        .filter(function (b) { return b.offsetParent !== null &&
-          (b.textContent || '').toLowerCase().indexOf('keep it') !== -1; })[0];
-      if (keepBtn && !seenDraft) { seenDraft = true; advance('candle'); }
+      if (document.querySelector('.session-stage, .session-consent, .session-reach')) {
+        advance('candle');
+      }
       if (document.querySelector('.reflection-spine')) { advance('keep'); }
       place();
     }).observe(document.body, {childList: true, subtree: true, attributes: true});
