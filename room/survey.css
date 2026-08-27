@@ -1,0 +1,30 @@
+/* One quiet line in the room, always there.
+   ⭐ Her ruling 2026-08-27: the survey sits in BOTH places — the end of the
+   walk and here — and it is the SAME survey. ⛔ Law 3: it is never triggered
+   by anything a visitor does, so it can never nag. It just sits there. */
+#room-survey {
+  position: fixed;
+  right: 10px;
+  bottom: 8px;
+  z-index: 40;
+  font-family: var(--font-pixel, monospace);
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: .02em;
+  color: var(--stone, #8a8378);
+  opacity: .72;
+  text-decoration: none;
+  background: color-mix(in srgb, var(--card, #efeae1) 82%, transparent);
+  border: 1px solid color-mix(in srgb, var(--stone, #8a8378) 28%, transparent);
+  border-radius: 3px;
+  padding: 3px 7px;
+  transition: opacity .18s ease;
+}
+#room-survey:hover,
+#room-survey:focus-visible { opacity: 1; }
+/* out of the way while the room is covered — the calendar or a station */
+body.station-open #room-survey { opacity: 0; pointer-events: none; }
+/* the calendar covers the room — the room's own signal, the same one the
+   guide reads to hide its ring */
+body:has(#mcal-scrim.mcal-open) #room-survey { opacity: 0; pointer-events: none; }
+@media (max-width: 640px) { #room-survey { font-size: 9px; right: 6px; bottom: 6px; } }
