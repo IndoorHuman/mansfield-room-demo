@@ -4,6 +4,35 @@
    is gone the moment the page is reloaded. Look, don't touch. */
 (function () {
   var SNAP = window.__ROOM_SNAPSHOT__ || {};
+
+  /* ⭐ Her ruling 2026-08-27: EVERY VISITOR GETS A FRESH ROOM.
+     Nothing on this page is written to a server — there isn't one — but the
+     room does keep two small presentation keys in the browser (a display
+     fence, and when the notebook was last seen). On a public link, and on a
+     shared computer especially, those would follow the next person in. So
+     browser storage is replaced with a stand-in that forgets on reload:
+     the room behaves exactly as it does, and remembers nothing. */
+  (function noMemory() {
+    function fresh() {
+      var m = {};
+      return {
+        getItem: function (k) { return Object.prototype.hasOwnProperty.call(m, k) ? m[k] : null; },
+        setItem: function (k, v) { m[k] = String(v); },
+        removeItem: function (k) { delete m[k]; },
+        clear: function () { m = {}; },
+        key: function (i) { return Object.keys(m)[i] || null; },
+        get length() { return Object.keys(m).length; }
+      };
+    }
+    ['localStorage', 'sessionStorage'].forEach(function (name) {
+      try {
+        Object.defineProperty(window, name, {value: fresh(), configurable: true});
+      } catch (e) {
+        // some browsers refuse to redefine it — then at least start clean
+        try { window[name].clear(); } catch (e2) {}
+      }
+    });
+  })();
   var STORE = JSON.parse(JSON.stringify(SNAP['/api/items'] || {items: {}}));
   var META  = STORE.meta || (STORE.meta = {});
 
@@ -37,7 +66,9 @@
      Tapping the candle replays a sitting so a visitor can see what one is:
      the flame quickens, the room looks through what is new, and a piece of
      writing comes back. The words are the room's own, verbatim. */
-  var SIT = {job: 0, at: 0, pick: null, n: 0};
+  /* the rotation starts somewhere different every visit, so two people
+     arriving from the same link do not meet the same sitting */
+  var SIT = {job: 0, at: 0, pick: null, n: Math.floor(Math.random() * 1000)};
   /* ⭐ Her ruling 2026-08-27: the shelf starts EMPTY and fills with what a
      visitor decides to keep. The bookshelf IS the reflections library, so
      this list is the shelf — one spine per sitting kept, gone on reload. */
