@@ -26212,7 +26212,7 @@
   // disagree, THESE ARE WRONG. Her lowercase `i` is hers and is NOT corrected;
   // every dash below is an EM DASH, not a hyphen — do not smooth them,
   // sentence-case the lines, or trim them.
-  var SESSION_REACH_ASK = 'shall i stay recent, or go further back?';
+  var SESSION_REACH_ASK = 'on this page the librarian stays recent.';
   var SESSION_REACH_TYPE = 'tell me how far back to go.';
   var SESSION_REACH_UNREADABLE =
     "i can't read that as a length — try months or years.";
@@ -29519,8 +29519,7 @@
         '<p class="session-reach-doors">' +
         '<button type="button" class="btn session-reach-recent">' +
         escapeHtml(SESSION_REACH_RECENT_LABEL) + '</button> ' +
-        '<button type="button" class="btn session-reach-back">' +
-        escapeHtml(SESSION_REACH_BACK_LABEL) + '</button></p>' +
+        '</p>' +
         (SESSION.reachAsking ?
           '<p class="session-reach-type">' +
           escapeHtml(SESSION_REACH_TYPE) + '</p>' +
