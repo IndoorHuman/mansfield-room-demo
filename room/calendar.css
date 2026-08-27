@@ -93,3 +93,12 @@
 .mcal-body p { margin: 0 0 .85rem; }
 .mcal-rname { color: var(--ink); font-family: var(--font-serif); font-style: italic; margin: 0 0 .5rem; }
 .mcal-nothing { color: var(--stone); font-family: var(--font-serif); font-style: italic; }
+
+/* ⛔ HER FINDING 2026-08-27: the desk's things were drawn OVER the chair.
+   app.js gives a surface-class item seated on a host `z-index: 1` and leaves
+   floor-class hosts at auto — so the notebook and the card box painted on top
+   of the chair back, which stands in FRONT of the desk. Level 2 puts the chair
+   where it belongs: above the seated things, below a grabbed piece (3) and the
+   room tint (4), so arranging and the time-of-day wash are untouched.
+   ⚠ This is a defect in the room itself, not only on this page. */
+#room-scene-el #room-obj-chair { z-index: 2; }

@@ -29488,7 +29488,7 @@
       (sessionConsentCardShowing() ?
         '<div class="session-consent">' +
         '<p>' + escapeHtml("the librarian reads what's newly arrived + your comments to shape one reflection.") + '</p>' +
-        '<p>' + escapeHtml('unreviewed new arrivals are sent to Claude only with your yes — never-show, retired, and trigger-marked things stay on this machine.') + '</p>' +
+        '<p>' + escapeHtml('on this page nothing is sent anywhere and nothing is charged — the reading was already done, in advance, on one computer. in the room you run on your own machine, this is the moment it asks you first.') + '</p>' +
         forecastLineHtml() +
         // 26.995-22 (gap G-26.995-2): the three controls carry their own
         // class so the rule that keeps them ON SCREEN can name them
