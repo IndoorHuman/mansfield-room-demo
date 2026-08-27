@@ -82,11 +82,10 @@ shelf; reload and the shelf is bare again. The next visitor gets a fresh room.
 
 **[The film](https://indoorhuman.github.io/mansfield-room-demo/film.mp4)** —
 an empty machine to a room with your own writing coming back to you. No voice;
-it is captioned. It shows the fence first, the hours honestly, and it says out
-loud where a sitting was written in advance rather than while you watched.
+it is captioned. It shows the fence first, the hours honestly, and it says
+where a sitting was written in advance rather than while you watched.
 
-Music is Erik Satie's first Gymnopédie, 1888, marked *lent et douloureux*, in a
-public domain recording. Nobody is owed a credit for it.
+Music is Erik Satie's first Gymnopédie, 1888.
 
 ## What running it yourself actually involves
 
