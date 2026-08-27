@@ -10140,6 +10140,23 @@
         seatedOnSurface(x, y, w, h);
       el.style.zIndex = seated ? '1' : '';
     }
+    // 26.97 (the owner, from a picture of the room): the blessings notebook was
+    // standing IN FRONT OF THE CHAIR. The rule above lifts a seated item over
+    // everything at level 0, not merely over the host it is sitting on — and
+    // the chair is floor class, so a notebook resting on the desk beat a chair
+    // standing in front of the desk.
+    //
+    // ⛔ Sorting by the bottom edge — the usual way to fake depth — cannot fix
+    // this: desk, chair, bookshelf, album, plant and bench ALL end at y 168.
+    // The scene carries no depth at all.
+    //
+    // Her ruling: move ONLY the chair, and touch nothing else in the room. So
+    // this is one object by name, not a class rule — the album keeps its
+    // present relationship with the bench, deliberately. ⚠ The next object
+    // stood in front of a surface will need the same thought; the general fix
+    // is a real depth order and is its own decision.
+    var chair = document.getElementById('room-obj-chair');
+    if (chair) { chair.style.zIndex = '2'; }
   }
 
   // The nine arrangeable objects. 26.5-09 UAT F16 (the owner): the chair
