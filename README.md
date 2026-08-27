@@ -1,7 +1,8 @@
 # Katherine Mansfield's room
 
 **→ [Walk through what this is](https://indoorhuman.github.io/mansfield-room-demo/)**
-· **[Or go straight into the room](https://indoorhuman.github.io/mansfield-room-demo/room/)**
+· **[Go straight into the room](https://indoorhuman.github.io/mansfield-room-demo/room/)**
+· **[What the first day looks like](https://indoorhuman.github.io/mansfield-room-demo/start/)**
 
 > ⚠️ **Every sentence on this page and in the room is a stand-in.** The words
 > are being written; the days, the writing and the reflections are already real.
@@ -75,6 +76,16 @@ and nothing here can be made to spend money.
 
 What you do lasts as long as your visit. Keep a reflection and it goes on the
 shelf; reload and the shelf is bare again. The next visitor gets a fresh room.
+
+## What running it yourself actually involves
+
+**[The first day, step by step](https://indoorhuman.github.io/mansfield-room-demo/start/)**
+— from nothing installed to a room you can sit in, with the real screens from a
+genuinely cold first run: what you need, what it asks you before it reads
+anything, what you point it at, the wait, and the room filling up.
+
+⚠️ **You cannot run it yet.** The room's own code is not public. That page
+exists so nobody has to guess what they would be signing up for.
 
 ## How it is built
 
