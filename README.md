@@ -4,6 +4,7 @@
 · **[Go straight into the room](https://indoorhuman.github.io/mansfield-room-demo/room/)**
 · **[What the first day looks like](https://indoorhuman.github.io/mansfield-room-demo/start/)**
 · **[Watch the two-minute film](https://indoorhuman.github.io/mansfield-room-demo/film.mp4)**
+· **[Run it yourself — the Study Room on GitHub](https://github.com/IndoorHuman/study-room)**
 
 > ⚠️ **Every sentence on this page and in the room is a stand-in.** The words
 > are being written; the days, the writing and the reflections are already real.
@@ -89,13 +90,14 @@ Music is Erik Satie's first Gymnopédie, 1888.
 
 ## What running it yourself actually involves
 
+**[The Study Room on GitHub](https://github.com/IndoorHuman/study-room)** — free, open source.
+Download the latest release (or clone the repository), then follow the first-run
+steps in that README.
+
 **[The first day, step by step](https://indoorhuman.github.io/mansfield-room-demo/start/)**
 — from nothing installed to a room you can sit in, with the real screens from a
 genuinely cold first run: what you need, what it asks you before it reads
 anything, what you point it at, the wait, and the room filling up.
-
-⚠️ **You cannot run it yet.** The room's own code is not public. That page
-exists so nobody has to guess what they would be signing up for.
 
 ## How it is built
 
