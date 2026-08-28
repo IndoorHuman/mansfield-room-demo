@@ -74,8 +74,8 @@
   // link into an openable door back to the raw journal. The roster mirrors
   // study_lib.DEFAULT_FENCED_ROSTER (the reader's copy; test_reflection_
   // verbatim pins the two in sync).
-  var REFLECTION_FENCED_ROSTER = ['Journal', 'personnel notes',
-    'billing & insurance notes', 'appraisal record'];
+  var REFLECTION_FENCED_ROSTER = ['Journal', 'work notes',
+    'financial notes', 'personal records'];
 
   // 26.91-39 (A-27, her ruling of 2026-08-11: "Teach Copy B to read settings,
   // then rename both") — ⚠ THE LIST ABOVE IS AN EXAMPLE. IT USED TO BE THE
@@ -17832,7 +17832,7 @@
   //      never a cached result.
   //
   // `origin_path` MUST NEVER BE READ here. Measured, it carries the full
-  // absolute path including the fenced parent `personnel notes/` and her
+  // absolute path including the fenced parent `work notes/` and her
   // username, and on the opaque days it resolves into a /var/folders/.../T/
   // temp dir — strictly worse than the naive folder read it would replace.
   //
@@ -22526,8 +22526,8 @@
   // This one already had the stored-value precedence at both its call sites
   // (the import screen and the config card), so it was a fallback in fact as
   // well as in name — which is exactly what REFLECTION_FENCED_ROSTER was not.
-  var VAULT_DEFAULT_ROSTER = ['Journal', 'personnel notes',
-    'billing & insurance notes', 'appraisal record'];
+  var VAULT_DEFAULT_ROSTER = ['Journal', 'work notes',
+    'financial notes', 'personal records'];
 
   // ⛔ HER FRAMING SENTENCE HAS ONE SOURCE (26.96-10, WR-05). It was typed
   // TWICE — once in the Manage pane and once on the import screen — and the
