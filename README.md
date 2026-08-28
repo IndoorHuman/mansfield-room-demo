@@ -1,16 +1,12 @@
 # Katherine Mansfield's room
 
-**→ [Walk through what this is](https://indoorhuman.github.io/mansfield-room-demo/)**
-· **[Go straight into the room](https://indoorhuman.github.io/mansfield-room-demo/room/)**
-· **[What the first day looks like](https://indoorhuman.github.io/mansfield-room-demo/start/)**
-· **[Watch the two-minute film](https://indoorhuman.github.io/mansfield-room-demo/film.mp4)**
-
 > ⚠️ **This repo is a demo, not the app you can fork and run yet.** The forkable version is still being built. Mansfield's diary entries and the app's reflections in the demo are real; the explanatory copy is still being rewritten.
 >
 > **Where to start**
 > - **See how the visual room works** → [open the demo room](https://indoorhuman.github.io/mansfield-room-demo/room/)
 > - **Understand what the product is** → [read the walkthrough](https://indoorhuman.github.io/mansfield-room-demo/)
 > - **See how setup works on day one** → [what the first day looks like, step by step](https://indoorhuman.github.io/mansfield-room-demo/start/)
+> - **[Watch the two-minute film](https://indoorhuman.github.io/mansfield-room-demo/film.mp4)** — from an empty computer to the Study Room on your machine, with your own writing coming back a few pieces at a time. No voice; captions only.
 
 ---
 
@@ -57,12 +53,6 @@ Showing that rule needs real private writing. Copyright keeps most diaries locke
 Everything here was recorded in advance, on one computer, before this page existed. **Nothing runs live while you browse.** There is no API key on this page and nothing here can spend money.
 
 What you save during a visit lasts until you reload. Keep a reflection and it goes on the shelf; reload and the shelf is empty again. The next visitor gets a fresh room.
-
-## Two minutes, if you would rather watch
-
-**[The two-minute film](https://indoorhuman.github.io/mansfield-room-demo/film.mp4)** goes from an empty computer to the Study Room on your machine, with your own writing coming back a few pieces at a time. No voice; captions only. It shows the private-folder rule first, the hours honestly, and which parts were recorded in advance rather than generated while you watch.
-
-Music is Erik Satie's first Gymnopédie, 1888.
 
 ## What running it yourself involves
 
