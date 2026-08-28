@@ -1,13 +1,13 @@
 # Katherine Mansfield's room
 
-**→ [Walk through what this is](https://indoorhuman.github.io/mansfield-room-demo/)**
-· **[Go straight into the room](https://indoorhuman.github.io/mansfield-room-demo/room/)**
-· **[What the first day looks like](https://indoorhuman.github.io/mansfield-room-demo/start/)**
-· **[Watch the two-minute film](https://indoorhuman.github.io/mansfield-room-demo/film.mp4)**
-· **[Run it yourself — the Study Room on GitHub](https://github.com/IndoorHuman/study-room)**
-
-> ⚠️ **Every sentence on this page and in the room is a stand-in.** The words
-> are being written; the days, the writing and the reflections are already real.
+> **This repo is the demo** — Katherine Mansfield's days in a finished room you can walk around. The app you can fork and run is **[the Study Room on GitHub](https://github.com/IndoorHuman/study-room)**.
+>
+> **Where to start**
+> - **See how the visual room works** → [open the demo room](https://indoorhuman.github.io/mansfield-room-demo/room/)
+> - **Understand what the product is** → [read the walkthrough](https://indoorhuman.github.io/mansfield-room-demo/)
+> - **See how setup works on day one** → [what the first day looks like, step by step](https://indoorhuman.github.io/mansfield-room-demo/start/)
+> - **[Watch the two-minute film](https://indoorhuman.github.io/mansfield-room-demo/film.mp4)** — from an empty computer to the Study Room on your machine, with your own writing coming back a few pieces at a time. No voice; captions only.
+> - **Run it on your own machine** → [the Study Room on GitHub](https://github.com/IndoorHuman/study-room)
 
 ---
 
