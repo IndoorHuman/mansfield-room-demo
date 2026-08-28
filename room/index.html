@@ -33,7 +33,8 @@
 
   <section id="screen-setup" class="screen active">
     <h1>The Study Room</h1>
-    <p>Welcome. The Study Room keeps writing you already saved and shows a few pieces back when you visit. Everything stays on your computer.</p>
+    <p>Welcome. This room keeps things you already saved, and hands a few
+    back to you when you visit. Everything stays on your computer.</p>
 
     <div class="card">
       <label for="library-path-input">Your library folder — where your
@@ -46,7 +47,8 @@
 
     <div class="card">
       <label for="source-path-input">A folder to bring things in from.
-      Nothing in that folder is ever changed — the app keeps its own copies.</label>
+      Nothing in that folder is ever changed — the room keeps its own
+      copies.</label>
       <input id="source-path-input" type="text"
              placeholder="for example: ~/Documents/notes">
       <p><button id="btn-scan" class="btn" type="button">Look
@@ -71,13 +73,13 @@
     <!-- 26.4-01 (SC3): the door to the whole-vault import + fence screen —
          a quiet lowercase link, never the default path. -->
     <p><button id="btn-whole-vault" type="button"
-      style="background:none;border:none;color:var(--ink-soft);cursor:pointer;font:inherit;text-decoration:underline">or bring in your whole notes folder, with private subfolders kept unread</button></p>
+      style="background:none;border:none;color:var(--ink-soft);cursor:pointer;font:inherit;text-decoration:underline">or bring in your whole vault, with your private folders kept unread</button></p>
   </section>
 
   <section id="screen-blessing" class="screen">
     <h2>A first look through your things</h2>
     <p>These are some of the oldest things you saved, one at a time. You
-    decide what the app may show you again.</p>
+    decide what the room may hand back to you.</p>
     <!-- 26.999 night, HER RULING (chosen from an offered set,
          AskUserQuestion, 2026-08-25): blessing reached WITHOUT the candle
          says the sitting is recommended first — "when the user want to go
@@ -87,7 +89,7 @@
          agent may reword it. It rides the screen itself (both doors in —
          the stack and the Manage grind — reach this screen; the candle
          sitting's own walk never does). -->
-    <p id="blessing-candle-first" style="color:var(--ink-soft)">Try the candle first — tap it to read what is new and choose which reflections to keep.</p>
+    <p id="blessing-candle-first" style="color:var(--ink-soft)">the librarian recommends a sitting at the candle first — it looks through what's new with you before you bless.</p>
     <!-- 22-uat: the decision bar sits ABOVE the content and stays put
          (sticky) while long content scrolls in its own region below —
          the judgment is always in reach, whatever the length (H9). -->
@@ -95,9 +97,9 @@
       <p id="blessing-progress"></p>
       <div id="blessing-verdicts">
         <button id="btn-bless-safe" class="btn"
-          type="button">keep — show me this again</button>
+          type="button">joyful — bring it back</button>
         <button id="btn-bless-never" class="btn btn-never"
-          type="button">never — do not show again</button>
+          type="button">heavy — set it aside</button>
         <button id="btn-bless-notnow" class="btn"
           type="button">not now</button>
         <button id="btn-bless-skip" type="button"
@@ -114,7 +116,7 @@
     <h2>Your shelf</h2>
     <!-- 22-uat: the shelf says what it is and how it opens; Q2 and the
          pile link sit above the cards, in reach without scrolling. -->
-    <p id="shelf-subtitle">reflections you chose to keep — open one, or just look.</p>
+    <p id="shelf-subtitle">a few things you chose to meet again — open one, or just look.</p>
     <div id="q2-habit-anchor"></div>
     <p><button id="shelf-pile-link" type="button"
       style="background:none;border:none;color:var(--ink-soft);cursor:pointer;font:inherit;text-decoration:underline">look through the pile</button></p>
@@ -413,7 +415,7 @@
          reuse existing handlers; nothing new happens on this screen. -->
     <header class="room-masthead">
       <h1 class="room-title">The Study Room</h1>
-      <p class="room-sub">your writing, on your computer</p>
+      <p class="room-sub">a room of your own</p>
       <div class="room-rule" aria-hidden="true"><span></span><i>&#9670;</i><span></span></div>
       <div class="room-toolbar">
         <button type="button" id="room-manage-link" class="btn">&#128218; manage your library</button>
@@ -482,7 +484,7 @@
           <span class="room-note-spot"></span>
           <img src="assets/room/desk.png" alt="">
         </button>
-        <!-- 26.8-05 (D-15): the kept-reflections notebook — a room object at
+        <!-- 26.8-05 (D-15): the blessings notebook — a room object at
              last: movable in design mode through the shared drag
              pipeline, move-but-not-remove client-side (the candle's
              class), seated on the desk's drawn-wood line
@@ -494,7 +496,7 @@
              is absent (art-last, never blocking — a 404 with no swap
              still shows the blockout beneath, fail-visible). -->
         <button type="button" id="room-obj-notebook" class="room-object has-sprite"
-          aria-label="the kept-reflections notebook" data-cls="surface"
+          aria-label="the blessings notebook" data-cls="surface"
           style="--x:264;--y:94;--w:28;--h:22">
           <span class="room-blockout" style="background:var(--wood-deep)"></span>
           <span class="room-label">notebook</span>
@@ -511,7 +513,7 @@
              blockout beneath is the fail-visible fallback. "card box" as
              the label is her own noun for it, from the sitting. -->
         <button type="button" id="room-obj-cardbox" class="room-object has-sprite"
-          aria-label="the app's notes about you" data-cls="surface"
+          aria-label="the librarian's memory of you" data-cls="surface"
           style="--x:226;--y:88;--w:30;--h:28">
           <span class="room-blockout" style="background:var(--wood-deep)"></span>
           <span class="room-label">card box</span>
@@ -660,7 +662,7 @@
        writing lives in app.js behind the escape seam — this markup is empty
        containers only. -->
   <section id="screen-vault-import" class="screen">
-    <h2>Before the app reads anything</h2>
+    <h2>Before the librarian reads anything</h2>
     <div id="vault-fence-body"></div>
     <div class="card">
       <p class="card-title">Kept private</p>
@@ -672,12 +674,12 @@
       <div id="vault-roster-card"></div>
     </div>
     <div class="card">
-      <label for="vault-path-input">Your notes folder. The app brings
-      your whole notes folder in and leaves the folders above unread.</label>
+      <label for="vault-path-input">Your vault folder. The librarian brings
+      your whole vault in and leaves the folders above unread.</label>
       <input id="vault-path-input" type="text"
              placeholder="for example: ~/Documents/MyVault">
       <p><button id="btn-vault-confirm" class="btn" type="button">bring my
-      notes in</button></p>
+      vault in</button></p>
       <div id="vault-import-report"></div>
     </div>
   </section>
@@ -878,5 +880,6 @@
 <script src="app.js?v=26.97-11"></script>
 <script src="calendar.js"></script>
 <script src="guide.js"></script>
+<a id="room-survey" href="https://docs.google.com/forms/d/e/1FAIpQLSdCkMN5tPIucmXGkwX706QkIrlUsUu1yrRrtZvzVxmMSqEjGQ/viewform" target="_blank" rel="noopener">what do you think this is?</a>
 </body>
 </html>
