@@ -3,11 +3,11 @@
 > ⚠️ **This repo is the demo** — Mansfield's diary in a finished room. The app you can fork and run is **[the Study Room](https://github.com/IndoorHuman/study-room)**.
 >
 > **Where to start**
-> - **Run it yourself** → [the Study Room on GitHub](https://github.com/IndoorHuman/study-room)
 > - **See how the visual room works** → [open the demo room](https://indoorhuman.github.io/mansfield-room-demo/room/)
 > - **Understand what the product is** → [read the walkthrough](https://indoorhuman.github.io/mansfield-room-demo/)
 > - **See how setup works on day one** → [what the first day looks like, step by step](https://indoorhuman.github.io/mansfield-room-demo/start/)
 > - **[Watch the two-minute film](https://indoorhuman.github.io/mansfield-room-demo/film.mp4)** — from an empty computer to the Study Room on your machine, with your own writing coming back a few pieces at a time. No voice; captions only.
+> - **Run it yourself** → [the Study Room on GitHub](https://github.com/IndoorHuman/study-room)
 
 ---
 
@@ -57,9 +57,9 @@ What you save during a visit lasts until you reload. Keep a reflection and it go
 
 ## What running it yourself involves
 
-**[The first day, step by step](https://indoorhuman.github.io/mansfield-room-demo/start/)** covers a cold install: what you need, what the app asks before it reads anything, what folder you point it at, the wait, and the room filling up. Screenshots are from a real first run.
+**[The Study Room on GitHub](https://github.com/IndoorHuman/study-room)** — download a release or clone it, then follow that README.
 
-⚠️ **You cannot download it yet.** The app's source code is not public. That page exists so nobody has to guess what they would be signing up for.
+**[The first day, step by step](https://indoorhuman.github.io/mansfield-room-demo/start/)** covers a cold install: what you need, what the app asks before it reads anything, what folder you point it at, the wait, and the room filling up. Screenshots are from a real first run.
 
 ## How the demo is built
 
