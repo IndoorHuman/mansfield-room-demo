@@ -1,11 +1,16 @@
 # Katherine Mansfield's room
 
-**→ [Read the walkthrough](https://indoorhuman.github.io/mansfield-room-demo/)**
-· **[Open the demo room](https://indoorhuman.github.io/mansfield-room-demo/room/)**
-· **[What setup looks like, step by step](https://indoorhuman.github.io/mansfield-room-demo/start/)**
+**→ [Walk through what this is](https://indoorhuman.github.io/mansfield-room-demo/)**
+· **[Go straight into the room](https://indoorhuman.github.io/mansfield-room-demo/room/)**
+· **[What the first day looks like](https://indoorhuman.github.io/mansfield-room-demo/start/)**
 · **[Watch the two-minute film](https://indoorhuman.github.io/mansfield-room-demo/film.mp4)**
 
-> ⚠️ **The copy on this page and in the demo is still a draft.** Mansfield's diary entries and the app's reflections are real; the surrounding explanation is being rewritten.
+> ⚠️ **This repo is a demo, not the app you can fork and run yet.** The forkable version is still being built. Mansfield's diary entries and the app's reflections in the demo are real; the explanatory copy is still being rewritten.
+>
+> **Where to start**
+> - **See how the visual room works** → [open the demo room](https://indoorhuman.github.io/mansfield-room-demo/room/)
+> - **Understand what the product is** → [read the walkthrough](https://indoorhuman.github.io/mansfield-room-demo/)
+> - **See how setup works on day one** → [what the first day looks like, step by step](https://indoorhuman.github.io/mansfield-room-demo/start/)
 
 ---
 
