@@ -61,12 +61,12 @@
   function openCalendar() {
     header('Katherine Mansfield’s days',
       standing
-        ? ('You are standing in ' + DAYS[standing].title +
-           '. The room holds only what she had written by then. ' +
+        ? ('You are in ' + DAYS[standing].title +
+           '. The demo shows only what she had written by then. ' +
            'Press another date to move.')
-        : ('Press a date and you are in it — the room holds only what she had ' +
-           'written by then. Everything here was made in advance, on one ' +
-           'computer; nothing is thinking while you look.'));
+        : ('Press a date and you are in it — the demo shows only what she had ' +
+           'written by then. Everything here was recorded in advance on one ' +
+           'computer; nothing runs live while you browse.'));
     var years = el('div', 'mcal-years');
     YEARS.forEach(function (y) {
       var b = el('button', 'mcal-year', y);
@@ -96,12 +96,12 @@
 
     var withR = mine.filter(function (k) { return DAYS[k].rid; }).length;
     sheet.appendChild(el('p', 'mcal-count',
-      mine.length + ' days she wrote in ' + year + ' · ' + withR + ' the room had something to say about'));
+      mine.length + ' days she wrote in ' + year + ' · ' + withR + ' with a reflection'));
 
     var lg = el('div', 'mcal-legend');
     [['mcal-k-day', 'a day she wrote'],
-     ['mcal-k-quiet', 'the room had nothing to say'],
-     ['mcal-k-held', 'held back']].forEach(function (row) {
+     ['mcal-k-quiet', 'no reflection'],
+     ['mcal-k-held', 'blocked from reading']].forEach(function (row) {
       var s = el('span'); var i = el('i', row[0]);
       s.appendChild(i); s.appendChild(document.createTextNode(row[1])); lg.appendChild(s);
     });
@@ -117,9 +117,9 @@
     a.appendChild(el('h3', null, '29 October 1915'));
     if (!allowed) {
       a.appendChild(el('p', null,
-        'The room has not read her diary. It cannot see this day at all — ' +
-        'not the words, not the date, not that it exists.'));
-      var b = el('button', 'mcal-btn', 'let the librarian read this');
+        'The app has not read this diary entry. It cannot see this day — ' +
+        'no words, no date, no sign it exists.'));
+      var b = el('button', 'mcal-btn', 'let the app read this entry');
       b.type = 'button';
       b.addEventListener('click', function () {
         allowed = true; window.__FENCE_ALLOWED__ = true; travel(FENCE);
@@ -128,12 +128,12 @@
     } else {
       a.appendChild(el('p', null,
         'It has read it now — this one day, on one computer. ' +
-        'Reload the page and it goes back to being held.'));
+        'Reload the page and it goes back to being blocked.'));
     }
     var m = el('div', 'mcal-moment');
-    ['The room will hold your diary back the same way.',
+    ['The app will block your private folders the same way.',
      'This reflection was made in advance, not now.',
-     'Pressing this changes nothing for anyone after you.'].forEach(function (t) {
+     'Reload the page and this entry goes back to being blocked.'].forEach(function (t) {
       m.appendChild(el('span', null, t));
     });
     a.appendChild(m);
@@ -177,7 +177,7 @@
 
     if (d.fence && !allowed) {
       rbox.appendChild(el('p', 'mcal-nothing',
-        'The room has not read this day. Nothing is hidden here — it was never handed over.'));
+        'The app has not read this day. Nothing was hidden — the entry was never handed over.'));
     } else if (d.rid) {
       rbox.appendChild(el('p', 'mcal-rname', '“' + d.rname + '”'));
       var rb = el('div', 'mcal-body');
@@ -186,8 +186,8 @@
         .then(function (md) { rb.appendChild(paragraphs(md)); });
     } else {
       rbox.appendChild(el('p', 'mcal-nothing',
-        'The room had nothing to say about this day. It will not write about someone ' +
-        'it cannot speak to, so some of her days come back empty. Her writing is above, whole.'));
+        'The app had nothing to say about this day. It will not write about someone ' +
+        'it cannot address, so some days come back with no reflection. Her writing is above, whole.'));
     }
     scrim.classList.add('mcal-open');
     document.body.style.overflow = 'hidden';

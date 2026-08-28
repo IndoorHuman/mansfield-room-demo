@@ -5,15 +5,15 @@
 (function () {
   var STEPS = [
     {key: 'date',   at: 'room-obj-calendar',
-     say: 'Press a date on the calendar. You will be standing in it — the room ' +
-          'will hold only what she had written by then.'},
+     say: 'Press a date on the calendar. You jump to that day — the demo shows ' +
+          'only what she had written by then.'},
     {key: 'candle', at: 'room-obj-candle',
-     say: 'Now press the candle. The librarian looks through what is new to ' +
-          'her by that date, and writes one thing back.'},
+     say: 'Now press the candle. The app reads what is new to her by that date ' +
+          'and writes one reflection back.'},
     {key: 'keep',   at: null,
-     say: 'Say yes when it asks, and then keep what it writes — it goes on the ' +
-          'shelf as a book. Let it go and nothing is kept. Either way, the next ' +
-          'visitor starts with an empty shelf.'}
+     say: 'Choose keep when it asks, and the reflection goes on the shelf. ' +
+          'Choose skip and nothing is kept. Either way, the next visitor starts ' +
+          'with an empty shelf.'}
   ];
   var at = 0, dead = false, box, halo;
 

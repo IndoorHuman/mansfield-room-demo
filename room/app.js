@@ -723,7 +723,7 @@
         escapeHtml('your library lives at ' + res.data.library_root + '.') +
         '</p>';
     }).catch(function () {
-      quietError(note, 'The room could not be reached — is the server ' +
+      quietError(note, 'The app could not be reached — is the server ' +
         'still running in your terminal?');
     });
   }
@@ -781,7 +781,7 @@
           '<p><button id="btn-onb-empty-vault" type="button" ' +
           'style="background:none;border:none;color:var(--ink-soft);' +
           'cursor:pointer;font:inherit;text-decoration:underline">' +
-          escapeHtml('or bring in your whole vault, with your private ' +
+          escapeHtml('or bring in your whole notes folder, with your private ' +
             'folders kept unread') + '</button></p>';
         var emptyVaultBtn = $('btn-onb-empty-vault');
         if (emptyVaultBtn) {
@@ -791,7 +791,7 @@
     }).catch(function () {
       APP.scan = null;
       $('btn-import').disabled = true;
-      quietError(box, 'The room could not be reached — is the server ' +
+      quietError(box, 'The app could not be reached — is the server ' +
         'still running in your terminal?');
     });
   }
@@ -830,7 +830,7 @@
       readImportProgress(box, 0);
     }).catch(function () {
       $('btn-import').disabled = false;
-      quietError(box, 'The room could not be reached, so nothing was ' +
+      quietError(box, 'The app could not be reached, so nothing was ' +
         'brought in — is the server still running in your terminal?');
     });
   }
@@ -875,7 +875,7 @@
     box.innerHTML = '<p>' + escapeHtml('copying your things in — ' +
       (snap.done || 0) + ' of ' + (snap.total || 0) + '.') + '</p>' +
       '<p>' + escapeHtml(importEtaLine(snap)) + '</p>' +
-      '<p>' + escapeHtml('you can close this; the room will be ready.') +
+      '<p>' + escapeHtml('you can close this; the app will keep working.') +
       '</p>';
   }
 
@@ -1064,7 +1064,7 @@
   function renderVisionProgress(box, snap) {
     renderVisionLine(box, snap);
     box.innerHTML += '<p>' +
-      escapeHtml('you can close this; the room will be ready.') + '</p>';
+      escapeHtml('you can close this; the app will keep working.') + '</p>';
   }
 
   // 26.94-14 (owner ruling, 2026-08-14): "just show the count." THE IN-ROOM
@@ -1314,7 +1314,7 @@
     // own.
     if (misses >= 3) {
       importReadReenable(ctx);
-      quietError(box, 'The room could not be heard from just now — open ' +
+      quietError(box, 'The app could not be heard from just now — open ' +
         'the room again in a little while and it will show what came in.');
       return;
     }
@@ -1451,7 +1451,7 @@
         });
       }
     }).catch(function () {
-      quietError(box, 'The room could not be reached — is the server ' +
+      quietError(box, 'The app could not be reached — is the server ' +
         'still running in your terminal?');
     });
   }
@@ -1995,7 +1995,7 @@
       'style="background:none;border:none;color:var(--ink-soft);' +
       'cursor:pointer;font:inherit;font-size:14px;' +
       'text-decoration:underline">' +
-      escapeHtml('let the librarian write it') + '</button>' +
+      escapeHtml('let the app write it') + '</button>' +
       '<button type="button" class="why-move-on" ' +
       'style="background:none;border:none;color:var(--ink-soft);' +
       'cursor:pointer;font:inherit;font-size:14px;' +
@@ -2482,11 +2482,11 @@
                    last_opened_ms: next.last_opened_ms });
     apiPost('/api/state', { changes: changes }).then(function (res) {
       if (!res.ok) {
-        showReaderNote('That could not be saved — the room may not be ' +
+        showReaderNote('That could not be saved — the app may not be ' +
           'reachable.');
       }
     }).catch(function () {
-      showReaderNote('That could not be saved — the room may not be ' +
+      showReaderNote('That could not be saved — the app may not be ' +
         'reachable.');
     });
     if (SHELF.cycle.shown_ids.indexOf(item.id) === -1) {
@@ -4812,7 +4812,7 @@
   // is opened for you (the pane IS the section, so a second click to
   // expand would be noise).
   var MANAGE_PANES = [
-    { key: 'librarian', label: 'the librarian',
+    { key: 'librarian', label: 'AI reader',
       els: ['manage-sec-librarian-settings', 'manage-sec-librarian'] },
     // ⭐ 26.96-13: THIS POSITION IS HERS, NOT A CONTRACT'S. It was placed here
     // by 26.96-02's contract, and while this phase was being built another
@@ -4857,13 +4857,13 @@
     // signal — which is a count by another name (law 3). ⛔ It must NOT
     // copy `cleaning` below, which is the one pane that is absent until its
     // tier exists.
-    { key: 'memory', label: 'the librarian\'s memory of you',
+    { key: 'memory', label: 'what the app remembers about you',
       els: ['manage-sec-memory'] },
     // 26.85-05 (D-04): the tidy-up's "later runs" doorway, directly under
     // the librarian whose call proposes the labels. The entry is ABSENT
     // (filtered out of the rail below) until the AI tier is actually
     // present — never a dead entry, never an error (D-06 fail-open).
-    { key: 'cleaning', label: 'tidy your vault',
+    { key: 'cleaning', label: 'tidy your notes',
       els: ['manage-sec-cleaning'] },
     // 26.5-03 (D-09): the Phase-23 content controls — filters (the
     // category fences), never show, and hidden (the trigger flag) —
@@ -4878,7 +4878,7 @@
     { key: 'never', label: 'never show', els: ['manage-sec-never'] },
     { key: 'hidden', label: 'hidden', els: ['manage-sec-hidden'] },
     { key: 'pile', label: 'the pile', els: ['manage-sec-pile'] },
-    { key: 'blessed', label: 'blessed', els: ['manage-sec-blessed'] },
+    { key: 'blessed', label: 'kept', els: ['manage-sec-blessed'] },
     { key: 'retired', label: 'retired', els: ['manage-sec-retired'] },
     // ⭐⭐ 26.99955 UAT G-…-01 (her ruling, 2026-08-26): the librarian's
     // suggestions FOLD. They streamed down the front page uncapped until
@@ -4893,9 +4893,9 @@
     // ⛔ APPENDED, NEVER INSERTED. The counted group's order above is HER
     // D-09 ruling; a new tile takes the end of it so not one of her ruled
     // positions moves.
-    { key: 'noticed', label: 'what the librarian noticed',
+    { key: 'noticed', label: 'what the app noticed',
       els: ['manage-sec-noticed'] },
-    { key: 'room', label: 'the room', els: ['manage-sec-room'] },
+    { key: 'room', label: 'the main screen', els: ['manage-sec-room'] },
     { key: 'library', label: 'about your library',
       els: ['manage-sec-library'] },
     // 26.4-05 (D-11): the comments pane — home of the ONE default-OFF
@@ -6155,7 +6155,7 @@
       'font-weight:700;line-height:1.2;margin:24px 0 8px;' +
       'padding:0 0 4px">comments</h3>' +
       '<p style="color:var(--ink-soft);font-size:14px;margin:0 0 8px">' +
-      escapeHtml('write my notes back to my vault files') +
+      escapeHtml('write my notes back to my files') +
       '</p>' +
       '<p style="color:var(--never);font-size:14px;margin:0 0 8px">' +
       escapeHtml('a note you leave here is added under `## Comments` in the original file, timestamped. Nothing else is touched — every line above it stays exactly as you wrote it.') +
@@ -7442,8 +7442,8 @@
   // 'Step inside' hand-off, which is the onboarding path, not a check.
   // Its terminal full stop is part of what she chose.
   var COPY_NOTHING_NEW = 'nothing new to bring in.';
-  var VAULT_REFUSAL_TITLE = 'Your vault wasn\'t brought in.';
-  var VAULT_REFUSAL_WHY = 'Bringing your vault in this way would have read the folders you keep private, so the room stopped.';
+  var VAULT_REFUSAL_TITLE = 'Your notes folder wasn\'t brought in.';
+  var VAULT_REFUSAL_WHY = 'Bringing your notes folder in this way would have read the folders you keep private, so the import stopped.';
   var VAULT_REFUSAL_NEXT = 'Nothing was changed, and nothing was brought in. You can try again.';
   var VAULT_REFUSAL_RETRY = 'try again';
   var VAULT_REFUSAL_PRIVATE = 'see the folders I keep private';
@@ -7744,7 +7744,7 @@
           escapeHtml('the same list the room shows you before an import ' +
             '— edited here, it is edited there.') + '</p>' +
           '<p style="color:var(--ink-soft);font-size:14px;margin:0 0 8px">' +
-          escapeHtml('this list is her boundary, so it stays next to her.') +
+          escapeHtml('private folders stay next to AI settings.') +
           '</p>' +
           '<div class="vault-roster-editor"></div>');
       if (blind) { return; }
@@ -8192,7 +8192,7 @@
       'font-weight:700;line-height:1.2;margin:24px 0 8px;' +
       'padding:0 0 4px">your reflections</h3>' +
       '<p style="color:var(--ink-soft);font-size:14px;margin:0 0 8px">' +
-      escapeHtml('a few reflections the librarian set out for you') +
+      escapeHtml('a few reflections the app set out for you') +
       '</p>' +
       // 26.4-10 (Change B): the owner-only, default-OFF, local display toggle.
       // Plain words: it changes only what YOU can click on THIS device, never
@@ -8224,7 +8224,7 @@
       // construction; the vermillion emphasis wears --never (two-reds
       // rule, never coral).
       '<p style="color:var(--ink-soft);font-size:14px;margin:16px 0 8px">' +
-      escapeHtml('write kept reflections back to my vault') + '</p>' +
+      escapeHtml('write kept reflections back to my notes folder') + '</p>' +
       '<p style="color:var(--never);font-size:14px;margin:0 0 8px">' +
       escapeHtml("when this is on, a reflection you keep is also written into your vault as one NEW note in Claude's observation/Journal analysis — nothing already there is ever touched.") +
       '</p>' +
@@ -11624,7 +11624,7 @@
     if (!slot) { return; }
     // the offer line stays ONE source literal — Suite 4 pins it byte-exactly
     slot.innerHTML = (withLead ? '<p>' +
-      escapeHtml('the librarian can pre-sort what just arrived — want suggestions?') +
+      escapeHtml('the app can sort what just arrived — want suggestions?') +
       '</p>' : '') +
       '<p><button type="button" class="btn librarian-sort-meta">' +
       'sort by titles and dates</button> ' +
@@ -11916,7 +11916,7 @@
     // one-shot deferral each time — armed here, never repeating on its
     // own.
     if (misses >= 3) {
-      quietError(slot, 'the room could not be heard from just now — ' +
+      quietError(slot, 'the app could not be heard from just now — ' +
         'look back in a little while.');
       return;
     }
@@ -12088,7 +12088,7 @@
     slot.innerHTML =
       (groups.joyful.length === 0 ? '' :
         '<p class="card-title">' +
-        escapeHtml('these look joyful — worth a look?') + '</p>' +
+        escapeHtml('these look worth keeping — take a look?') + '</p>' +
         groups.joyful.map(function (row) {
           return '<div class="card librarian-row">' +
             '<p class="card-title" style="margin:0 0 4px">' +
@@ -12125,7 +12125,7 @@
         }).join('')) +
       (groups.heavy.length === 0 ? '' :
         '<p class="card-title">' +
-        escapeHtml('these might be heavy — set aside unshown?') +
+        escapeHtml('these might be hard to see — hide them?') +
         '</p>' +
         groups.heavy.map(function (row) {
           return '<div class="card librarian-row">' +
@@ -14147,7 +14147,7 @@
             box.innerHTML = '';
           }).catch(function () {
             if (note) {
-              quietError(note, 'that could not be saved — the room ' +
+              quietError(note, 'that could not be saved — the app ' +
                 'may not be reachable.');
             }
           });
@@ -14196,7 +14196,7 @@
       if (res.data.written === true) {
         noteSlot.innerHTML =
           '<p style="color:var(--ink-soft);font-size:14px">' +
-          escapeHtml('the librarian left a note on the desk.') +
+          escapeHtml('the app left a note on the desk.') +
           '</p>';
         return;
       }
@@ -14429,7 +14429,7 @@
     // two-reds); Pass = a quiet text-link, a decline that is "not today",
     // never permanent (D-02).
     bar.innerHTML = '<p>' +
-      escapeHtml('A few things the librarian set out for you.') + '</p>' +
+      escapeHtml('A few things the app set out for you.') + '</p>' +
       (ack ? '<p style="color:var(--ink-soft);font-size:14px">' +
         escapeHtml("a thread I'll keep on your shelf.") + '</p>' : '') +
       '<p><button type="button" class="btn proposal-allow">Allow</button> ' +
@@ -14527,7 +14527,7 @@
     }).catch(function () {
       var bar = $('proposals-bar');
       if (bar) {
-        quietError(bar, 'the room could not be reached — is the server ' +
+        quietError(bar, 'the app could not be reached — is the server ' +
           'still running in your terminal?');
       }
     });
@@ -14555,7 +14555,7 @@
     }).catch(function () {
       var bar = $('proposals-bar');
       if (bar) {
-        quietError(bar, 'the room could not be reached — is the server ' +
+        quietError(bar, 'the app could not be reached — is the server ' +
           'still running in your terminal?');
       }
     });
@@ -14595,7 +14595,7 @@
   // not an error: an empty library has no observations and no allowed
   // connections yet, so the shelf is honestly empty until content exists.
   var EMPTY_SHELF_HEAD = 'An empty shelf, waiting.';
-  var EMPTY_SHELF_BODY = 'As the librarian finds threads between what you ' +
+  var EMPTY_SHELF_BODY = 'As the app finds threads between what you ' +
     'saved and what you\'re living now, the ones you allow become books ' +
     'here. Your shelf fills over time.';
 
@@ -18674,7 +18674,7 @@
       var invite = document.createElement('div');
       invite.className = 'caption-hand station-caption';
       invite.style.textAlign = 'center';
-      invite.textContent = 'a book for what you welcome. bless something, and it will keep a page here.';
+      invite.textContent = 'a record of what you kept. Save a reflection and it gets a page here.';
       place(invite, g.invite);
       scene.appendChild(invite);
       return;
@@ -19043,7 +19043,7 @@
     if (entry.author === 'librarian') {
       var suffix = document.createElement('span');
       suffix.style.color = 'var(--ink-soft)';
-      suffix.textContent = ' — the librarian';
+      suffix.textContent = ' — the app';
       why.appendChild(suffix);
     }
     var wy = entry.isImage ? g.whyImage : g.whyText;
@@ -22542,7 +22542,7 @@
   // literal because it genuinely belongs to that one host. ⛔ The bytes ABOVE
   // are hers and an agent may not alter one of them.
   var ROSTER_FRAMING = 'These folders stay private. The ' +
-    'librarian never reads them, and nothing from them appears in the ' +
+    'the app never reads them, and nothing from them appears in the ' +
     'room until you choose to release a specific item.';
 
   // ✅ SHE RULED THIS, 2026-08-20, AT THE OWNER SITTING. The seat is no longer
@@ -22611,7 +22611,7 @@
   // stops looking; corrected 2026-08-22 by 26.96-28 after grepping every
   // test in the tree for it and finding only this comment and one other.
   var ROSTER_PICKER_LEAD = 'Choose a folder to keep private.';
-  var ROSTER_PICKER_REACH = 'Only folders in your vault appear here.';
+  var ROSTER_PICKER_REACH = 'Only folders in your notes folder appear here.';
   var ROSTER_PICKER_NO_MATCH = 'Nothing on the list matches that.';
   // ⭐ HER RULING Q OF 2026-08-22 — the sentence for the state nobody had ever
   // asked her about, taken AFTER plan 26.96-29 was written.
@@ -22635,7 +22635,7 @@
   // Gated by `emptyVaultSaysSo` in tests/test_roster_pane.cjs, whose second
   // arm is the one that matters: a read that did NOT succeed may not make the
   // room say this.
-  var ROSTER_PICKER_NONE = 'No folders found in your vault.';
+  var ROSTER_PICKER_NONE = 'No folders found in your notes folder.';
 
   // -- 26.96-27: THE FOLDERS THE PICKER MAY OFFER --------------------------
   //
@@ -23975,7 +23975,7 @@
   // pass that really ran — the same defect pointing the other way.
   function rosterSentence(op, retroactive, known) {
     if (op !== 'add') {
-      return 'The librarian can read that folder again. Things already set ' +
+      return 'The app can read that folder again. Things already set ' +
         'aside stay set aside — you can bring any of them back yourself, ' +
         'one at a time.';
     }
@@ -24289,7 +24289,7 @@
     VAULT_IMPORT.root = root;
     var box = $('vault-import-report');
     if (!root) {
-      if (box) { quietError(box, 'Type the folder your vault lives in.'); }
+      if (box) { quietError(box, 'Type the path to your notes folder.'); }
       return;
     }
     // The shipped vault read — kept NESTED here so the read fires ONLY from
@@ -24298,13 +24298,13 @@
     function doVaultImport() {
       if (box) {
         box.innerHTML = '<p>' +
-          escapeHtml('the librarian is reading your library…') + '</p>';
+          escapeHtml('the app is reading your library…') + '</p>';
       }
       apiPost('/api/import', { path: root }).then(function (res) {
         if (!res.ok) {
           if (box) {
             quietError(box, errorText(res, 'The import could not finish. ' +
-              'Your vault is untouched.'));
+              'Your notes folder is untouched.'));
           }
           return;
         }
@@ -24331,7 +24331,7 @@
         }
       }).catch(function () {
         if (box) {
-          quietError(box, 'The room could not be reached, so nothing was ' +
+          quietError(box, 'The app could not be reached, so nothing was ' +
             'brought in — is the server still running in your terminal?');
         }
       });
@@ -24452,7 +24452,7 @@
     var el = $('screen-name-candle');
     if (!el) { return; }
     el.innerHTML =
-      '<h2>' + escapeHtml('Meet the one who keeps your room') + '</h2>' +
+      '<h2>' + escapeHtml('Meet the Study Room') + '</h2>' +
       '<p>' + escapeHtml('A candle sits on the desk, always lit. It\'s ' +
         'your librarian — it reads what you bring in, finds threads ' +
         'between your past and your present, and leaves them for you to ' +
@@ -24464,7 +24464,7 @@
       '<input id="onb-candle-name" type="text" maxlength="40" placeholder="' +
       escapeAttr('a name (optional)') + '">' +
       '<p><button id="btn-onb-name" class="btn" type="button">' +
-      escapeHtml('name the candle') + '</button></p>' +
+      escapeHtml('name the candle button') + '</button></p>' +
       '</div>' +
       '<p><button id="btn-onb-name-skip" type="button" ' +
       'style="background:none;border:none;color:var(--ink-soft);' +
@@ -24542,7 +24542,7 @@
     var el = $('screen-sources');
     if (!el) { return; }
     el.innerHTML =
-      '<h2>' + escapeHtml('Point the librarian at your things') + '</h2>' +
+      '<h2>' + escapeHtml('Point the app at your notes') + '</h2>' +
       '<p>' + escapeHtml('Bring in a folder from your computer — your ' +
         'notes, your photos, your writing. Nothing inside it is ever ' +
         'changed; the room keeps its own copies. (Notion comes in once, ' +
@@ -24553,7 +24553,7 @@
         'arrive — the room starts with ' + rosterNames(VAULT_DEFAULT_ROSTER) +
         ". It goes by the folder's name, so if you call yours " +
         'something else, add it below.') + '</p>' +
-      '<p>' + escapeHtml('The librarian never reads them, never names ' +
+      '<p>' + escapeHtml('The app never reads them, never names ' +
         'them, never counts them.') + '</p>' +
       '</div>' +
       '<p><button id="btn-onb-sources-go" class="btn" type="button">' +
@@ -24799,7 +24799,7 @@
     box.innerHTML = '<p>' + escapeHtml(lead +
       (snap.done || 0) + ' of ' + (snap.total || 0) + '.') + '</p>' +
       '<p>' + escapeHtml(importEtaLine(snap)) + '</p>' +
-      '<p>' + escapeHtml('you can close this; the room will be ready.') +
+      '<p>' + escapeHtml('you can close this; the app will keep working.') +
       '</p>';
   }
 
@@ -25121,7 +25121,7 @@
     if (n === 1) {
       return 'The room keeps pictures small enough to open quickly — so 1 picture was made smaller on the way in. Nothing else was changed.';
     }
-    return 'The room keeps pictures small enough to open quickly — so ' + n + ' pictures were made smaller on the way in. Nothing else was changed.';
+    return 'The app keeps pictures small enough to open quickly — so ' + n + ' pictures were made smaller on the way in. Nothing else was changed.';
   }
 
   // Paint that one line ABOVE the shipped import report, without touching
@@ -30505,7 +30505,7 @@
       box.innerHTML =
         '<div class="card">' +
         '<p>' + escapeHtml("Some notes carry private things right in the title. Until you bless a note, the room keeps its title out of the librarian's reach — nothing here is read by the librarian before you say so.") + '</p>' +
-        '<p>' + escapeHtml('Keep any Notes folder out of the room — pick the ones to skip.') + '</p>' +
+        '<p>' + escapeHtml('Keep any Notes folder private — pick the ones to skip.') + '</p>' +
         folders.map(function (name) {
           var checked = kept.indexOf(name) === -1 ? 'checked ' : '';
           return '<label style="display:block;margin:0.2em 0">' +
@@ -30596,7 +30596,7 @@
   // register stops being trustworthy.
   // ⚠ She took this candidate over two shorter ones BECAUSE of its second
   // half: it says what the button below it will do.
-  var VAULT_PICKER_EMPTY = 'No folders to choose from — everything in your vault will come in.';
+  var VAULT_PICKER_EMPTY = 'No folders to choose from — everything in your notes folder will come in.';
 
   // The seed, spelled once. Each row is {name, value, kept, toggleable}.
   //
