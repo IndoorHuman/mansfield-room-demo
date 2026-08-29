@@ -24,25 +24,25 @@ Why the demo cannot show your writing: the room is run by an AI. A live copy on 
 
 ## Measured figures (checkable)
 
-These numbers come from real first runs on one fast Mac (Apple M5, 16 GB, macOS 26.5.1, Ollama with `qwen2.5:7b`). Every figure is a best case; a slower machine or connection will take longer. A note count never predicts cost. One library with fewer notes took nearly twice as long as another, and changing only a folder's name once moved a run by sixty-four times.
+These numbers come from real first runs on one fast Mac (Apple M5, 16 GB, macOS 26.5.1, Ollama with `qwen2.5:7b`). Every figure here is a best case; a slower machine, or a slower connection, will take longer. And how much writing you have does not tell you how long it will take: one library with fewer pieces of writing took nearly twice as long as a larger one, and changing only a folder's name once moved a run by sixty-four times.
 
 | What | Measured |
 | --- | --- |
 | Downloads (Ollama + two models, ~5.15 GB on a ~29 MB/s line) | ~3 minutes |
-| Import 476 notes (folder drop) | 0.19 s |
-| Import 50 photographs (folder drop) | 0.12 s |
-| Sorting 476 notes (small library, as shipped) | 41 min |
-| Sorting 3,447 notes (middling library, one folder fenced) | 3.5 min |
-| Sorting 3,447 notes (same library, diary folder *not* fenced) | ~4.4 h on one uncontended run (about four and three-quarter hours flat) |
-| Sorting 2,665 notes (my own vault, nothing fenced) | ~8.2 h (calculated at ~480 B/s) |
-| Reading 50 photographs on-device | 3.5 s |
-| Guided first pass (machine path only) | 27 s and two clicks from room-open to first look; reading time not measured |
+| Bringing in 476 pieces of writing (dragging a folder in) | 0.19 s |
+| Bringing in 50 photographs (dragging a folder in) | 0.12 s |
+| Sorting 476 pieces of writing (small library, as it comes) | 41 min |
+| Sorting 3,447 pieces of writing (middling library, one folder held back) | 3.5 min |
+| Sorting 3,447 pieces of writing (same library, the diary folder *not* held back) | ~4.4 h, steady the whole way |
+| Sorting 2,665 pieces of writing (a real everyday library, nothing held back) | ~8.2 h |
+| Looking at 50 photographs, all on your own machine | 3.5 s |
+| Opening the room and reaching your first piece of writing | 27 s and two clicks; the machine's part only, your reading time is on top |
 
-Apple Photos has no single number, because the room copies whole videos out before it discovers it cannot show them. Two measured runs on one library took 52 min (4 photos gained, 576 videos retired) and 10 min (0 photos, 19 videos retired).
+Bringing in an Apple Photos library has no single number, because the room copies whole videos out of it before it works out that it cannot show them. Two real runs on one library took 52 min (4 photographs arrived, 576 videos set aside) and 10 min (no photographs, 19 videos set aside).
 
-A folder of iPhone HEIC pictures can be worse: drag-import can report success while importing zero photos and showing *That folder looks empty*. The vault door warns plainly; the folder door does not.
+A folder of iPhone photographs can be worse: dragging it in can say it worked while bringing in none of them, and then tell you *That folder looks empty*. Bringing in an Obsidian vault says plainly what it cannot read. Dragging a folder in does not.
 
-The full per-step table and method notes live in the Study Room planning repo (`wayfinder-137/THE-TABLE.md`). This section is the summary linked from [the first-day walkthrough](https://indoorhuman.github.io/mansfield-room-demo/start/).
+Every step of this, in order and with what it costs, is on [the first-day walkthrough](https://indoorhuman.github.io/mansfield-room-demo/start/).
 
 ## Three current limits
 
