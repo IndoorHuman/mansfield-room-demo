@@ -5,8 +5,9 @@
 (function () {
   var STEPS = [
     {key: 'date',   at: 'room-obj-calendar',
-     say: 'Press a date on the calendar. You will be standing in it — the room ' +
-          'will hold only what she had written by then.'},
+     say: 'This is a demo room, filled with Katherine Mansfield\'s diary instead of ' +
+          'yours. Press a date on the calendar and you are standing in that day; ' +
+          'the room holds only what she had written by then.'},
     {key: 'candle', at: 'room-obj-candle',
      say: 'Now press the candle. The librarian looks through what is new to ' +
           'her by that date, and writes one thing back.'},

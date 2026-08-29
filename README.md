@@ -1,79 +1,96 @@
-# Katherine Mansfield's room
+# The Study Room, shown on someone else's diary
 
-> ⚠️ **This repo is the demo** — Mansfield's diary in a finished room. The app you can fork and run is **[the Study Room](https://github.com/IndoorHuman/study-room)**.
->
-> **Where to start**
-> - **See how the visual room works** → [open the demo room](https://indoorhuman.github.io/mansfield-room-demo/room/)
-> - **Understand what the product is** → [read the walkthrough](https://indoorhuman.github.io/mansfield-room-demo/)
-> - **See how setup works on day one** → [what the first day looks like, step by step](https://indoorhuman.github.io/mansfield-room-demo/start/)
-> - **[Watch the two-minute film](https://indoorhuman.github.io/mansfield-room-demo/film.mp4)** — from an empty computer to the Study Room on your machine, with your own writing coming back a few pieces at a time. No voice; captions only.
-> - **Run it yourself** → [the Study Room on GitHub](https://github.com/IndoorHuman/study-room)
+**This site is a demo.** The room you can open here holds Katherine Mansfield's diary, not yours. Nothing in it is yours and nothing in it can be.
 
----
+The Study Room is an app that runs on your own computer. It reads writing you have already saved and shows some of it back to you, a few pieces at a time. Setting it up takes an evening and a local AI model, so before you spend that evening, this site lets you see what a day in the room looks like.
 
-## What this is
+Why the demo cannot show your writing: the room is run by an AI. A live copy on a public page would spend money for every visitor, which makes no sense for a free app, so nothing here runs live. And your own writing stays on your machine and never leaves it, so it cannot appear on a website. What the demo uses instead is a whole life that is already public: Mansfield's diary from 1914 to 1922, 206 days, read by the app in advance on one computer. She died in 1923. Her writing is public domain.
 
-The Study Room is an app on your own computer. It reads writing you have already saved and shows some of it back to you, a few pieces at a time.
+**Where to start**
 
-You cannot see that happen with your own writing on this site. Your files stay on your machine and never leave it. This demo uses someone else's instead: **Katherine Mansfield's diary, 1914–1922.** Two hundred and six days. She died in 1923. Her writing is public domain now.
-
-Pick a date on the calendar and you are in that day. The demo only shows what she had written by then — about fifty pieces in the summer of 1914, nearly four hundred by the end of 1922. You watch the archive grow.
+- [Open the demo room](https://indoorhuman.github.io/mansfield-room-demo/room/) and press a date on the calendar. You are in that day, and the room holds only what she had written by then.
+- [Read the walkthrough](https://indoorhuman.github.io/mansfield-room-demo/) for what the app is and what you would see if you ran it on your own writing.
+- [The first day, step by step](https://indoorhuman.github.io/mansfield-room-demo/start/) covers install, setup and first use, with the real screens.
+- [Watch the two-minute film](https://indoorhuman.github.io/mansfield-room-demo/film.mp4), from an empty computer to your own writing coming back a few pieces at a time. Captions, no voice.
+- [Get the Study Room on GitHub](https://github.com/IndoorHuman/study-room) to run it on your own writing.
 
 ## What it promises, and what it costs
 
-- **Your old writing comes back a few pieces at a time.** That slow pace is the point.
-- **It is free, and nothing you import leaves your computer.**
-- **The price is hours, not money.** On one real library it took most of an evening before the app was worth opening. How long it takes depends on what you import. Nothing on screen tells you which run you got.
-- **Writing works well. Photos work too, and they take much longer.**
-- This is **the first room in a larger app**, and it is still being built.
+- Your old writing comes back a few pieces at a time. The slow pace is the point.
+- It is free, and nothing you import leaves your computer.
+- The price is hours. On one real library it took most of an evening before the app was worth opening. How long it takes depends on what you import, and nothing on screen tells you which run you got.
+- Writing works well. Photos work too, and they take much longer.
+- This is the first room in a larger app, and it is still being built.
+
+## Measured figures (checkable)
+
+These numbers come from real first runs on one fast Mac (Apple M5, 16 GB, macOS 26.5.1, Ollama with `qwen2.5:7b`). Every figure is a best case; a slower machine or connection will take longer. A note count never predicts cost. One library with fewer notes took nearly twice as long as another, and changing only a folder's name once moved a run by sixty-four times.
+
+| What | Measured |
+| --- | --- |
+| Downloads (Ollama + two models, ~5.15 GB on a ~29 MB/s line) | ~3 minutes |
+| Import 476 notes (folder drop) | 0.19 s |
+| Import 50 photographs (folder drop) | 0.12 s |
+| Sorting 476 notes (small library, as shipped) | 41 min |
+| Sorting 3,447 notes (middling library, one folder fenced) | 3.5 min |
+| Sorting 3,447 notes (same library, diary folder *not* fenced) | ~4.4 h on one uncontended run (about four and three-quarter hours flat) |
+| Sorting 2,665 notes (my own vault, nothing fenced) | ~8.2 h (calculated at ~480 B/s) |
+| Reading 50 photographs on-device | 3.5 s |
+| Guided first pass (machine path only) | 27 s and two clicks from room-open to first look; reading time not measured |
+
+Apple Photos has no single number, because the room copies whole videos out before it discovers it cannot show them. Two measured runs on one library took 52 min (4 photos gained, 576 videos retired) and 10 min (0 photos, 19 videos retired).
+
+A folder of iPhone HEIC pictures can be worse: drag-import can report success while importing zero photos and showing *That folder looks empty*. The vault door warns plainly; the folder door does not.
+
+The full per-step table and method notes live in the Study Room planning repo (`wayfinder-137/THE-TABLE.md`). This section is the summary linked from [the first-day walkthrough](https://indoorhuman.github.io/mansfield-room-demo/start/).
 
 ## Three current limits
 
-1. **Import is all-or-nothing.** Close the laptop, lose power, or stop part-way and the whole import is discarded. There is no resume.
-2. **Import only works on Mac today.** No support is promised for other platforms.
-3. **When the app fails, it may say nothing.** Silence does not always mean "no opinion."
+1. Import is all-or-nothing. Close the laptop, lose power, or stop part-way and the whole import is discarded. There is no resume.
+2. Import only works on Mac today. No support is promised for other platforms.
+3. When the app fails, it may say nothing. Silence does not always mean "no opinion."
 
 Each limit has a plan. None is fixed yet.
 
-## Why the demo uses Mansfield's diary
+## The privacy rule, shown on a real diary
 
-The app's main privacy rule is simple: **it will not read a private folder until you say so.** Mark a folder private and it never reaches the part of the app that reads your writing.
+The app will not read a private folder until you say so. Mark a folder private and it never reaches the part of the app that reads your writing.
 
-Showing that rule needs real private writing. Copyright keeps most diaries locked up for decades. Mansfield is the rare case where her whole life, diary included, is public domain. So the demo can show the privacy rule on something genuinely raw instead of on fake placeholder notes.
+Showing that rule needs real private writing. Copyright keeps most diaries locked up for decades. Mansfield's whole life, diary included, is public domain, so the demo can show the rule on something raw instead of on fake placeholder notes.
 
-**One of her days is still blocked in this demo.** The app cannot see it — not the words, not the date, not that it exists. You can unblock it for your visit, watch that day fill in, and reload to put it back behind the block for the next visitor.
+One of her days is still blocked in this demo. The app cannot see it: not the words, not the date, not that it exists. You can unblock it for your visit, watch that day fill in, and reload to put it back behind the block for the next visitor.
 
 ## Two things to expect in the demo
 
-**The app writes as if she were still alive** — "you set that down" — because it always writes to whoever it is reading, and nobody told it she was gone.
+The app writes as if she were still alive ("you set that down") because it always writes to whoever it is reading, and nobody told it she was gone.
 
-**Some days come back with no reflection.** The app will not write about someone it cannot address. Her quietest years produce the thinnest reflections. Those days are marked on the calendar. Her own writing is still there on every one of them.
+Some days come back with no reflection. The app will not write about someone it cannot address, and her quietest years produce the thinnest reflections. Those days are marked on the calendar. Her own writing is still there on every one of them.
 
 ## This demo is read-only
 
-Everything here was recorded in advance, on one computer, before this page existed. **Nothing runs live while you browse.** There is no API key on this page and nothing here can spend money.
+Everything here was recorded in advance, on one computer, before this page existed. Nothing runs live while you browse. There is no API key on this page and nothing here can spend money.
 
 What you save during a visit lasts until you reload. Keep a reflection and it goes on the shelf; reload and the shelf is empty again. The next visitor gets a fresh room.
 
 ## What running it yourself involves
 
-**[The Study Room on GitHub](https://github.com/IndoorHuman/study-room)** — download a release or clone it, then follow that README.
+[The Study Room on GitHub](https://github.com/IndoorHuman/study-room): download a release or clone it, then follow that README.
 
-**[The first day, step by step](https://indoorhuman.github.io/mansfield-room-demo/start/)** covers a cold install: what you need, what the app asks before it reads anything, what folder you point it at, the wait, and the room filling up. Screenshots are from a real first run.
+[The first day, step by step](https://indoorhuman.github.io/mansfield-room-demo/start/) covers a cold install: what you need, what the app asks before it reads anything, what folder you point it at, the wait, and the room filling up. Screenshots are from a real first run.
 
 ## How the demo is built
 
-- **One static page and a copy of the app's front end** — the same files that ship, not a rebuild.
-- **The server is replaced by a short stand-in script**, because the surface turned out to be small: one read helper and one write helper. Reads come from a snapshot captured off the real server. **Writes live in memory for your visit and disappear on reload** — which is how the read-only rule is enforced, not just promised.
+- One static page and a copy of the app's front end, the same files that ship, not a rebuild.
+- The server is replaced by a short stand-in script, because the surface turned out to be small: one read helper and one write helper. Reads come from a snapshot captured off the real server. Writes live in memory for your visit and disappear on reload, which is what makes the page read-only.
 - The calendar is a real object in the room: a 44×40 sprite in the app's palette, on the wall above the desk.
 - Nothing is stored in your browser. No cookies, no service worker, no database.
 
 ## Source material
 
-Mansfield's diary, letters, poems and short fiction are **public domain worldwide** — she died in 1923, the *Journal* was published in 1927 and the *Letters* in 1929.
+Mansfield's diary, letters, poems and short fiction are public domain worldwide. She died in 1923; the *Journal* was published in 1927 and the *Letters* in 1929.
 
 The reflections were written by the app in advance, one day at a time, on one machine. They are quoted whole and unedited, including the awkward ones.
 
 ## Search engines
 
-This page currently asks search engines and archives to stay away, because the explanatory copy is still a draft. That block comes off in one line, in two files, once the wording is final.
+This page asks search engines and archives to stay away while the wording is still being finished. That block comes off in one line, in two files, once it is.
