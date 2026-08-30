@@ -12,7 +12,7 @@
      say: 'Now press the candle. The librarian looks through what is new to ' +
           'her by that date, and writes one thing back.'},
     {key: 'keep',   at: null,
-     say: 'Say yes when it asks, and then keep what it writes — it goes on the ' +
+     say: 'Say yes when it asks, and then keep what it writes, and it goes on the ' +
           'shelf as a book. Let it go and nothing is kept. Either way, the next ' +
           'visitor starts with an empty shelf.'}
   ];

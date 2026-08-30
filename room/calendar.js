@@ -64,7 +64,7 @@
         ? ('You are standing in ' + DAYS[standing].title +
            '. The room holds only what she had written by then. ' +
            'Press another date to move.')
-        : ('Press a date and you are in it — the room holds only what she had ' +
+        : ('Press a date and you are in it; the room holds only what she had ' +
            'written by then. Everything here was made in advance, on one ' +
            'computer; nothing is thinking while you look.'));
     var years = el('div', 'mcal-years');
@@ -117,7 +117,7 @@
     a.appendChild(el('h3', null, '29 October 1915'));
     if (!allowed) {
       a.appendChild(el('p', null,
-        'The room has not read her diary. It cannot see this day at all — ' +
+        'The room has not read her diary. It cannot see this day at all: ' +
         'not the words, not the date, not that it exists.'));
       var b = el('button', 'mcal-btn', 'let the librarian read this');
       b.type = 'button';
@@ -127,7 +127,7 @@
       a.appendChild(b);
     } else {
       a.appendChild(el('p', null,
-        'It has read it now — this one day, on one computer. ' +
+        'It has read it now, this one day, on one computer. ' +
         'Reload the page and it goes back to being held.'));
     }
     var m = el('div', 'mcal-moment');
@@ -177,7 +177,7 @@
 
     if (d.fence && !allowed) {
       rbox.appendChild(el('p', 'mcal-nothing',
-        'The room has not read this day. Nothing is hidden here — it was never handed over.'));
+        'The room has not read this day. Nothing is hidden here; it was never handed over.'));
     } else if (d.rid) {
       rbox.appendChild(el('p', 'mcal-rname', '“' + d.rname + '”'));
       var rb = el('div', 'mcal-body');
