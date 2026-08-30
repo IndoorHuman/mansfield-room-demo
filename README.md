@@ -1,12 +1,12 @@
 # The Study Room, shown on someone else's diary
 
-**This site is a demo.** The room you can open here holds Katherine Mansfield's diary, not yours. Nothing in it is yours and nothing in it can be.
+**This site is a demo.** The room you can open here holds Katherine Mansfield's diary, not yours.
 
 The Study Room is an app that runs on your own computer. It reads writing you have already saved and shows some of it back to you, a few pieces at a time. Setting it up takes an evening and a local AI model, so before you spend that evening, this site lets you see what a day in the room looks like.
 
 Why the demo cannot show your writing: the room is run by an AI. A live copy on a public page would spend money for every visitor, which makes no sense for a free app, so nothing here runs live. And your own writing stays on your machine and never leaves it, so it cannot appear on a website. What the demo uses instead is a whole life that is already public: Mansfield's diary from 1914 to 1922, 206 days, read by the app in advance on one computer. She died in 1923. Her writing is public domain.
 
-**Where to start**
+## Where to start
 
 - [Open the demo room](https://indoorhuman.github.io/mansfield-room-demo/room/) and press a date on the calendar. You are in that day, and the room holds only what she had written by then.
 - [Read the walkthrough](https://indoorhuman.github.io/mansfield-room-demo/) for what the app is and what you would see if you ran it on your own writing.
@@ -80,7 +80,7 @@ What you save during a visit lasts until you reload. Keep a reflection and it go
 
 ## How the demo is built
 
-- One static page and a copy of the app's front end, the same files that ship, not a rebuild.
+- One static page and a copy of the app's front end, the same files that ship rather than a rebuild.
 - The server is replaced by a short stand-in script, because the surface turned out to be small: one read helper and one write helper. Reads come from a snapshot captured off the real server. Writes live in memory for your visit and disappear on reload, which is what makes the page read-only.
 - The calendar is a real object in the room: a 44×40 sprite in the app's palette, on the wall above the desk.
 - Nothing is stored in your browser. No cookies, no service worker, no database.
