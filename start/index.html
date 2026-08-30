@@ -84,8 +84,8 @@ section{display:flex;flex-direction:column;gap:1rem}
   <p class="eyebrow">step by step</p>
   <div class="steps"><div class="st"><div class="st-h"><span class="st-n">1</span><h3>what you need</h3></div><p class="st-p">A computer and a terminal, the black window where you type commands. That is the entry price, and it is the one thing that will stop some people. It has been tested on Macs. Nothing else has to be installed: no account, no card, no key, nothing downloaded in the background.</p></div><div class="st"><div class="st-h"><span class="st-n">2</span><h3>getting it</h3></div><p class="st-p">It is free on <a href="https://github.com/IndoorHuman/study-room">GitHub</a>. Download the <a href="https://github.com/IndoorHuman/study-room/releases/latest">latest release</a>, unzip it, and keep that folder somewhere you can find. Or clone the repository. Either way you end up with a folder on your own machine.</p></div><div class="st"><div class="st-h"><span class="st-n">3</span><h3>you type one line</h3></div><div class="term"><div class="term-bar">your terminal</div><pre class="term-body">$ python3 server.py --setup
 
-The Study Room — setup
-...</pre></div><p class="st-p">There is no installer and nothing to download. You put the room's folder somewhere, open a terminal in it, and run one command. Everything below is what it prints back.</p></div><div class="st"><div class="st-h"><span class="st-n">4</span><h3>it tells you the whole bargain before you decide</h3></div><div class="term"><div class="term-bar">your terminal</div><pre class="term-body">The Study Room — setup
+The Study Room: setup
+...</pre></div><p class="st-p">There is no installer and nothing to download. You put the room's folder somewhere, open a terminal in it, and run one command. Everything below is what it prints back.</p></div><div class="st"><div class="st-h"><span class="st-n">4</span><h3>it tells you the whole bargain before you decide</h3></div><div class="term"><div class="term-bar">your terminal</div><pre class="term-body">The Study Room: setup
 
 Before you paste a key
 
@@ -102,7 +102,7 @@ text to the AI service you give a key to, and reads the answer back:
 A reflection can go back and forth. Anything you write back is sent too,
 and each time, your writing goes with it again.
 
-Each can run on a model on your own machine instead — you&#x27;ll be asked the
+Each can run on a model on your own machine instead; you&#x27;ll be asked the
 first time one comes up.
 
 One thing needs a key and can&#x27;t be done on your machine: changing a setting
@@ -114,7 +114,7 @@ at all and never leave this computer.
 
 Cost: reflections are nearly the whole bill, and are well under a dollar
 each. Everything else rounds to nothing. Your real bill is on your
-provider&#x27;s own usage page — the room never guesses at it.
+provider&#x27;s own usage page; the room never guesses at it.
 
 You can stop here and not give a key.                     more: LIBRARIAN.md
 
@@ -125,14 +125,14 @@ Two files exist now, and they are yours to read, edit or delete:
   settings:  /Users/you/.study-room/settings.json
   keys:      /Users/you/.study-room/keys.json   (readable only by you)
 
-anthropic — no key saved
+anthropic: no key saved
   press Enter    leave it exactly as it is
   y              type a key now (it will not be shown)
   env            save nothing here; you will set the shell variable yourself
   choice: 
   left exactly as it is.
 
-openai — no key saved
+openai: no key saved
   press Enter    leave it exactly as it is
   y              type a key now (it will not be shown)
   env            save nothing here; you will set the shell variable yourself
@@ -148,7 +148,7 @@ What the room has now:
   anthropic    no key
   openai       no key
 
-Run this again any time — it is how a key is changed or removed.
+Run this again any time. It is how a key is changed or removed.
 To open the room:  python3 server.py
 </pre></div><p class="st-p">This is the real thing it prints on a machine with no key, word for word. It says what would be sent and to whom, what never leaves, that the expensive part is well under a dollar and everything else rounds to nothing. It says <b>you can stop here and not give a key</b> before it asks you anything. Press Enter twice and you have a room that runs entirely on your own machine, for nothing.</p></div><div class="st"><div class="st-h"><span class="st-n">5</span><h3>then you start it</h3></div><div class="term"><div class="term-bar">your terminal</div><pre class="term-body">$ python3 server.py
 
