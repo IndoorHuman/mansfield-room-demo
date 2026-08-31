@@ -72,6 +72,10 @@ Everything here was recorded in advance, on one computer, before this page exist
 
 What you save during a visit lasts until you reload. Keep a reflection and it goes on the shelf; reload and the shelf is empty again. The next visitor gets a fresh room.
 
+## One question, if you have a minute
+
+After you have looked around, [say what you think this is](https://docs.google.com/forms/d/e/1FAIpQLSdCkMN5tPIucmXGkwX706QkIrlUsUu1yrRrtZvzVxmMSqEjGQ/viewform?usp=pp_url&entry.1432361672=project+page). One tap, nothing typed, nothing asked about you.
+
 ## What running it yourself involves
 
 [The Study Room on GitHub](https://github.com/IndoorHuman/study-room): download a release or clone it, then follow that README.
